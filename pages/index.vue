@@ -12,9 +12,16 @@
         <div class="tw-flex tw-flex-col tw-justify-evenly">
           <div class="tw-space-y-5">
             <p class="text-intro">I'M OBADONI HENRY</p>
-            <p class="main-font tw-text-8xl tw-text-compgreen">
-              Software Developer
-            </p>
+
+            <typewriter
+              :replace="replace"
+              :type-interval="200"
+              :replace-interval="1000"
+            >
+              <p class="main-font tw-text-8xl tw-text-compgreen">
+                Software Engineer
+              </p>
+            </typewriter>
           </div>
           <div class="tw-flex tw-gap-2">
             <i
@@ -91,12 +98,19 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "IndexPage",
+  data() {
+    return {
+      replace: [
+        { from: "A Software Engineer", to: "A Product Designer" },
+      ],
+    };
+  },
 });
 </script>
 <style lang="scss" scoped>
 .main-bg {
   @apply tw-bg-secondary;
-  background-image: url("~/assets/images/jediiry.svg");
+  background-image:  url("~/assets/images/jediiry.svg");
   background-repeat: no-repeat;
   background-position: right top;
 }
@@ -107,8 +121,8 @@ export default Vue.extend({
 .rotate {
   writing-mode: vertical-rl;
 }
-.arrow-position{
-right: 100vh - calc(50vh/2);
-bottom: 10%;
+.arrow-position {
+  right: 100vh - calc(50vh / 2);
+  bottom: 10%;
 }
 </style>
