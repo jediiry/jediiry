@@ -23,7 +23,7 @@
                 bxl-github
                 tw-text-3xl
                 hover:tw-text-black
-                tw-text-compgreen tw-cursor-pointer
+                tw-text-primary tw-cursor-pointer
               "
             ></i>
             <i
@@ -32,7 +32,7 @@
                 bxl-instagram
                 tw-text-3xl
                 hover:tw-text-black
-                tw-text-compgreen tw-cursor-pointer
+                tw-text-primary tw-cursor-pointer
               "
             ></i>
             <i
@@ -41,7 +41,7 @@
                 bxl-twitter
                 tw-text-3xl
                 hover:tw-text-black
-                tw-text-compgreen tw-cursor-pointer
+                tw-text-primary tw-cursor-pointer
               "
             ></i>
             <i
@@ -50,7 +50,7 @@
                 bxl-facebook-circle
                 tw-text-3xl
                 hover:tw-text-black
-                tw-text-compgreen tw-cursor-pointer
+                tw-text-primary tw-cursor-pointer
               "
             ></i>
             <i
@@ -59,7 +59,7 @@
                 bxl-whatsapp
                 tw-text-3xl
                 hover:tw-text-black
-                tw-text-compgreen tw-cursor-pointer
+                tw-text-primary tw-cursor-pointer
               "
             ></i>
           </div>
@@ -95,13 +95,13 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .main-bg {
-  @apply tw-bg-primary;
-  background-image: url("~/assets/images/mainbg.svg");
+  @apply tw-bg-secondary;
+  background-image: url("~/assets/images/jediiry.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position: right top;
 }
 .text-intro {
-  @apply tw-text-xl tw-font-medium;
+  @apply tw-text-xl tw-font-medium tw-text-white;
   letter-spacing: 1rem;
 }
 .rotate {
