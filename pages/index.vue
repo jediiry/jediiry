@@ -18,7 +18,7 @@
               :type-interval="200"
               :replace-interval="1000"
             >
-              <p class="main-font tw-text-8xl tw-text-compgreen">
+              <p class="main-font tw-text-8xl tw-text-primary">
                 Software Engineer
               </p>
             </typewriter>
@@ -29,8 +29,8 @@
                 bx
                 bxl-github
                 tw-text-3xl
-                hover:tw-text-black
-                tw-text-primary tw-cursor-pointer
+                hover:tw-text-primary
+                tw-text-complimentry tw-cursor-pointer
               "
             ></i>
             <i
@@ -38,8 +38,8 @@
                 bx
                 bxl-instagram
                 tw-text-3xl
-                hover:tw-text-black
-                tw-text-primary tw-cursor-pointer
+                hover:tw-text-primary
+                tw-text-complimentry tw-cursor-pointer
               "
             ></i>
             <i
@@ -47,8 +47,8 @@
                 bx
                 bxl-twitter
                 tw-text-3xl
-                hover:tw-text-black
-                tw-text-primary tw-cursor-pointer
+                hover:tw-text-primary
+                tw-text-complimentry tw-cursor-pointer
               "
             ></i>
             <i
@@ -56,8 +56,8 @@
                 bx
                 bxl-facebook-circle
                 tw-text-3xl
-                hover:tw-text-black
-                tw-text-primary tw-cursor-pointer
+                hover:tw-text-primary
+                tw-text-complimentry tw-cursor-pointer
               "
             ></i>
             <i
@@ -65,30 +65,22 @@
                 bx
                 bxl-whatsapp
                 tw-text-3xl
-                hover:tw-text-black
-                tw-text-primary tw-cursor-pointer
+                hover:tw-text-primary
+                tw-text-complimentry tw-cursor-pointer
               "
             ></i>
           </div>
         </div>
         <div class="image-section tw-flex tw-flex-col tw-justify-end">
-          <span class="title tw-text-complimentry rotate tw-text-right"
-            >Hire Me</span
+          <span class="tw-text-2xl tw-text-complimentry rotate tw-text-right"
+            >Hire Me <i class='bx bx-down-arrow-alt tw-text-primary' ></i></span
           >
+          
         </div>
       </div>
-      <i
-        class="
-          bx bx-right-arrow-alt
-          tw-bg-compgreen
-          tw-p-6
-          tw-text-8xl
-          tw-fixed
-          tw-rounded-full
-          tw-text-primary
-          arrow-position
-        "
-      ></i>
+      <div class="custom-bg">
+        <i class="bx bx-right-arrow-alt"></i>
+      </div>
     </div>
   </div>
 </template>
@@ -100,9 +92,7 @@ export default Vue.extend({
   name: "IndexPage",
   data() {
     return {
-      replace: [
-        { from: "A Software Engineer", to: "A Product Designer" },
-      ],
+      replace: [{ from: "A Software Engineer", to: "A Product Designer" }],
     };
   },
 });
@@ -110,7 +100,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .main-bg {
   @apply tw-bg-secondary;
-  background-image:  url("~/assets/images/jediiry.svg");
+  background-image: url("~/assets/images/jediiry2.svg");
   background-repeat: no-repeat;
   background-position: right top;
 }
@@ -124,5 +114,33 @@ export default Vue.extend({
 .arrow-position {
   right: 100vh - calc(50vh / 2);
   bottom: 10%;
+}
+.custom-bg {
+  background-image: url("~/assets/images/oilpaint.jpeg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale(10%);
+  background-size: contain;
+  @apply tw-p-6 tw-text-8xl 
+          tw-fixed 
+          tw-rounded-full
+        tw-text-secondary
+          arrow-position
+          tw-cursor-pointer
+          tw-w-48
+          tw-h-48;
+
+  i {
+    visibility: hidden;
+  }
+  &:hover {
+    background-image: none;
+    background: black;
+    i {
+      visibility: visible;
+      @apply tw-text-primary
+    }
+  }
 }
 </style>
