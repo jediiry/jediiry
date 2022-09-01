@@ -7,7 +7,7 @@
       @click.prevent="isVisible = true"
       class="
         bx bx-menu
-        tw-text-5xl tw-bg-black tw-p-2 tw-rounded-full tw-text-complimentry
+        tw-text-5xl tw-bg-black tw-p-3 tw-rounded-full tw-text-complimentry
         hover:tw-text-compgreen
         tw-cursor-pointer
       "
@@ -24,15 +24,18 @@
         tw-z-50
       "
     >
-      <div class="stable-alignment tw-py-24 tw-space-y-10">
-        <div class="tw-text-right">
+      <div class="stable-alignment tw-h-full tw-py-24 tw-flex tw-justify-between tw-flex-col">
+        <div class="tw-flex tw-justify-between">
+          <p class="title tw-text-white">
+      Obadoni <span class="tw-text-complimentry">.</span>
+    </p>
           <i
             @click.prevent="isVisible = false"
             class="
               bx bx-x
               tw-text-5xl
               tw-bg-black
-              tw-p-2
+  tw-p-3
               tw-rounded-full
               tw-text-complimentry
               hover:tw-text-compgreen
@@ -40,9 +43,81 @@
             "
           ></i>
         </div>
-        <div class="tw-space-y-5">
-         
+        <div class="tw-space-y-10">
+           <nuxt-link
+            @click.native="setActiveMenu"
+            to="/"
+            exact
+            class="
+            tw-text-3xl
+              tw-text-white tw-flex tw-items-center 
+             
+              tw-cursor-pointer
+              hover:tw-text-primary
+              
+              hover:tw-font-semibold
+            "
+          >
+            <div class="">
+              <span>Home</span>
+            </div>
+          </nuxt-link>
+           <nuxt-link
+            @click.native="setActiveMenu"
+            to="/dashboard"
+            exact
+            class="
+            tw-text-3xl
+              tw-text-white tw-flex tw-items-center 
+             
+              tw-cursor-pointer
+              hover:tw-text-primary
+              
+              hover:tw-font-semibold
+            "
+          >
+            <div class="">
+              <span>About Me</span>
+            </div>
+          </nuxt-link>
+           <nuxt-link
+            @click.native="setActiveMenu"
+            to="/dashboard"
+            exact
+            class="
+            tw-text-3xl
+              tw-text-white tw-flex tw-items-center 
+              tw-cursor-pointer
+              hover:tw-text-primary
+              
+              hover:tw-font-semibold
+            "
+          >
+            <div class="">
+              <span>Projects</span>
+            </div>
+          </nuxt-link>
+           
+           <nuxt-link
+            @click.native="setActiveMenu"
+            to="/dashboard"
+            exact
+            class="
+            tw-text-3xl
+              tw-text-white tw-flex tw-items-center 
+              tw-cursor-pointer
+              hover:tw-text-primary
+              
+              hover:tw-font-semibold
+            "
+          >
+            <div class="">
+              <span>Technologies</span>
+            </div>
+          </nuxt-link>
+        
         </div>
+          <Social/>
       </div>
     </div>
   </div>
@@ -61,7 +136,13 @@ export default Vue.extend({
   .menu-bg{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #3E4A3D;
+    background: linear-gradient(45deg,#3E4A3D , #1d1d1d) ;
     background-blend-mode:difference;
   }
+  a.nuxt-link-active {
+  font-weight: bold;
+  color: theme('colors.primary');
+  text-decoration: line-through solid theme('colors.complimentry') 5%;
+  
+}
 </style>

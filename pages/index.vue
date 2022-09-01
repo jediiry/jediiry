@@ -23,53 +23,7 @@
               </p>
             </typewriter>
           </div>
-          <div class="tw-flex tw-gap-2">
-            <i
-              class="
-                bx
-                bxl-github
-                tw-text-3xl
-                hover:tw-text-primary
-                tw-text-complimentry tw-cursor-pointer
-              "
-            ></i>
-            <i
-              class="
-                bx
-                bxl-instagram
-                tw-text-3xl
-                hover:tw-text-primary
-                tw-text-complimentry tw-cursor-pointer
-              "
-            ></i>
-            <i
-              class="
-                bx
-                bxl-twitter
-                tw-text-3xl
-                hover:tw-text-primary
-                tw-text-complimentry tw-cursor-pointer
-              "
-            ></i>
-            <i
-              class="
-                bx
-                bxl-facebook-circle
-                tw-text-3xl
-                hover:tw-text-primary
-                tw-text-complimentry tw-cursor-pointer
-              "
-            ></i>
-            <i
-              class="
-                bx
-                bxl-whatsapp
-                tw-text-3xl
-                hover:tw-text-primary
-                tw-text-complimentry tw-cursor-pointer
-              "
-            ></i>
-          </div>
+         <Social/>
         </div>
         <div class="image-section tw-flex tw-flex-col tw-justify-end">
           <span class="tw-text-2xl tw-text-complimentry rotate tw-text-right"
