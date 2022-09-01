@@ -108,7 +108,7 @@ export default Vue.extend({
   writing-mode: vertical-rl;
 }
 .arrow-position{
-right: 100vh - 50vh/2;
+right: 100vh - calc(50vh/2);
 bottom: 10%;
 }
 </style>
