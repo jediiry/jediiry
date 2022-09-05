@@ -15,24 +15,23 @@
 
             <typewriter
               :replace="replace"
-              :type-interval="200"
-              :replace-interval="1000"
+              :type-interval="50"
+              :replace-interval="500"
             >
               <p class="main-font tw-text-8xl tw-text-primary">
                 Software Engineer
               </p>
             </typewriter>
           </div>
-         <Social/>
+          <Social />
         </div>
         <div class="image-section tw-flex tw-flex-col tw-justify-end">
           <span class="tw-text-2xl tw-text-complimentry rotate tw-text-right"
-            >Hire Me <i class='bx bx-down-arrow-alt tw-text-primary' ></i></span
-          >
-          
+            >Hire Me <i class="bx bx-down-arrow-alt tw-text-primary"></i
+          ></span>
         </div>
       </div>
-      <div class="custom-bg">
+      <div class="custom-bg" @click.prevent="$router.push({path:'/about'})">
         <i class="bx bx-right-arrow-alt"></i>
       </div>
     </div>
@@ -54,7 +53,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .main-bg {
   @apply tw-bg-secondary;
-  background-image: url("~/assets/images/jediiry2.svg");
+  background-image: url("~/assets/images/jediiry3.svg");
   background-repeat: no-repeat;
   background-position: right top;
 }
@@ -71,11 +70,12 @@ export default Vue.extend({
 }
 .custom-bg {
   background-image: url("~/assets/images/oilpaint.jpeg");
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   filter: grayscale(10%);
-  background-size: contain;
+  background-size: cover;
   @apply tw-p-6 tw-text-8xl 
           tw-fixed 
           tw-rounded-full
@@ -93,7 +93,7 @@ export default Vue.extend({
     background: black;
     i {
       visibility: visible;
-      @apply tw-text-primary
+      @apply tw-text-primary;
     }
   }
 }
