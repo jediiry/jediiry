@@ -66,13 +66,12 @@ export default Vue.extend({
   bottom: 10%;
 }
 .custom-bg {
-  background-image: url("~/assets/images/oilpaint.jpeg");
-  background-repeat: no-repeat;
+  background-image: none;
+    background: black;
   display: flex;
   justify-content: center;
   align-items: center;
   filter: grayscale(10%);
-  background-size: cover;
   @apply tw-p-6 tw-text-8xl 
           tw-fixed 
           tw-rounded-full
@@ -83,14 +82,19 @@ export default Vue.extend({
           tw-h-48;
 
   i {
-    visibility: hidden;
+     visibility: visible;
+      @apply tw-text-primary;
+   
   }
   &:hover {
-    background-image: none;
-    background: black;
+    
+
+    background-image: url("~/assets/images/oilpaint.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
     i {
-      visibility: visible;
-      @apply tw-text-primary;
+      visibility: hidden;
+     
     }
   }
 }
