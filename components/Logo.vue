@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-flex tw-justify-between tw-items-center">
+  <div class="tw-flex tw-justify-between tw-items-center tw-sticky tw-top-10 tw-z-50">
     <p
       class="title  tw-cursor-pointer tw-group"
       :class="[color]"
@@ -17,7 +17,9 @@
         tw-cursor-pointer
       "
     ></i>
-    <div
+    <div data-aos="fade-down"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="200"
       v-if="isVisible"
       class="tw-fixed menu-bg tw-top-0 tw-bottom-0 tw-left-0 tw-right-0 tw-z-50"
     >
@@ -115,6 +117,23 @@
               <span>Technologies</span>
             </div>
           </nuxt-link>
+          <nuxt-link
+            @click.native="setActiveMenu"
+            to="/hire"
+            exact
+            class="
+              tw-text-3xl
+              tw-text-white
+              tw-flex
+              tw-items-center
+              tw-cursor-pointer
+              hover:tw-text-primary hover:tw-font-semibold
+            "
+          >
+            <div class="">
+              <span>Hire Me</span>
+            </div>
+          </nuxt-link>
           <Social />
         </div>
         <div></div>
@@ -124,6 +143,7 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
+import aosMixin from '~/plugins/aos'
 export default Vue.extend({
   props: {
     color: {
@@ -136,6 +156,7 @@ export default Vue.extend({
       isVisible: false,
     };
   },
+  mixins: [aosMixin]
 });
 </script>
 <style lang="scss">

@@ -6,42 +6,101 @@
         tw-h-full tw-py-24 tw-flex tw-flex-col tw-justify-between tw-space-y-24
       "
     >
-      <Logo color="tw-text-secondary" />
+      <Logo color="tw-text-white" />
 
-      <div class="tw-grid tw-grid-cols-5 tw-h-full">
-
-        <div class="tw-flex tw-flex-col tw-justify-evenly tw-col-span-3 tw-col-start-2">
-          <div class="tw-space-y-10">
+      <div class="tw-grid tw-grid-cols-4 tw-h-full tw-gap-10">
+          <div class="tw-flex tw-justify-end">
             <typewriter
               :replace="replace"
               :type-interval="200"
               :replace-interval="500"
             >
-              <p class="main-font tw-text-8xl tw-text-primary">About me</p>
+              <p class="main-font tw-text-8xl tw-text-primary rotate">Hire Me</p>
             </typewriter>
-
-            <p class="tw-text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus, a cumque eveniet cupiditate cum voluptatem aspernatur
-              accusamus explicabo. Nesciunt similique aliquid minus ex,
-              architecto voluptatem libero incidunt numquam, placeat ut fugit
-              voluptate unde. Illo delectus expedita maiores quidem assumenda
-              amet voluptate culpa, eveniet sint, et mollitia ut placeat. Eum
-              nesciunt ad facilis asperiores ipsa, tempore explicabo molestias
-              laborum accusamus provident neque cumque. Ab aliquid ducimus
-              similique sed! Pariatur cum hic similique praesentium ipsam atque.
-              Cupiditate aut accusantium repellat, eos eaque ex autem vitae
-              nostrum dignissimos fugit odit iste blanditiis dolorem.
-            </p>
-            <div class="tw-flex tw-items-center tw-gap-4 tw-cursor-pointer tw-group">
-            <i class='bx group-hover:tw-text-complimentry tw-text-primary tw-text-5xl bxs-cloud-download'></i> <span class="main-font tw-text-2xl tw-text-white">curriculum vitae</span>
           </div>
+        <div
+          class="
+            tw-flex tw-flex-col tw-justify-evenly tw-col-span-2 tw-col-start-2
+          "
+        >
+        
+          <div class="tw-space-y-10">
+            <form>
+              <div class="tw-space-y-4">
+                <div class="tw-space-y-2">
+                  <label for="fullname">FullName <span class="tw-text-red-500">*</span></label>
+                  <input
+                    type="text"
+                    class="
+                      tw-block
+                      tw-w-full
+                      tw-py-2
+                      tw-px-4
+                      tw-outline-none
+                      tw-bg-secondary3
+                    "
+                  />
+                </div>
+                <div class="tw-space-y-2">
+                  <label for="fullname">Organization</label>
+                  <input
+                    type="text"
+                    class="
+                      tw-block
+                      tw-w-full
+                      tw-py-2
+                      tw-px-4
+                      tw-outline-none
+                      tw-bg-secondary3
+                    "
+                  />
+                </div>
+                <div class="tw-space-y-2">
+                  <label for="fullname">Email <span class="tw-text-red-500">*</span></label>
+                  <input
+                    type="text"
+                    class="
+                      tw-block
+                      tw-w-full
+                      tw-py-2
+                      tw-px-4
+                      tw-outline-none
+                      tw-bg-secondary3
+                    "
+                  />
+                </div>
+                <div class="tw-space-y-2">
+                  <label for="fullname">Phone <span class="tw-text-red-500">*</span></label>
+                  <input
+                    type="text"
+                    class="
+                      tw-block
+                      tw-w-full
+                      tw-py-2
+                      tw-px-4
+                      tw-outline-none
+                      tw-bg-secondary3
+                    "
+                  />
+                </div>
+                <div class="tw-space-y-2">
+                  <label for="fullname">Details <span class="tw-text-red-500">*</span></label>
+                  <textarea class="
+                      tw-block
+                      tw-w-full
+                      tw-py-2
+                      tw-px-4
+                      tw-outline-none
+                      tw-bg-secondary3
+                    "  cols="30" rows="10"></textarea>
+                  
+                </div>
+                <button class="tw-bg-complimentry tw-px-5 tw-py-3"> Send</button>
+              </div>
+            </form>
           </div>
-          
-         
         </div>
       </div>
-     
     </div>
   </div>
 </template>
@@ -60,10 +119,10 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .main-bg {
-  @apply tw-bg-primary;
-//   background-image: url("~/assets/images/jediiry3.svg");
   background-repeat: no-repeat;
-  background-position: center top;
+  background-size: cover;
+  background: linear-gradient(45deg, #3e4a3d, #1d1d1d);
+  background-blend-mode: difference;
 }
 .text-intro {
   @apply tw-text-xl tw-font-medium tw-text-white;
@@ -103,5 +162,8 @@ export default Vue.extend({
       @apply tw-text-primary;
     }
   }
+}
+label{
+    color: rgb(92, 89, 89);
 }
 </style>

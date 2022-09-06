@@ -16,8 +16,7 @@
             <typewriter
               :replace="replace"
               :type-interval="200"
-              :replace-interval="500"
-              :start-delay="10"
+              :replace-interval="100"
             >
               <p class="main-font tw-text-8xl tw-text-primary">
                 Software Engineer
