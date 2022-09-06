@@ -1,6 +1,6 @@
 <template>
-  <div class="tw-min-h-screen main-bg">
-    <div
+  <div class="tw-min-h-screen main-bg" >
+    <div 
       class="
         stable-alignment
         tw-h-full tw-py-24 tw-flex tw-flex-col tw-justify-between tw-space-y-24
@@ -8,7 +8,9 @@
     >
       <Logo color="tw-text-white" />
 
-      <div class="tw-grid tw-grid-cols-4 tw-h-full tw-gap-10">
+      <div class="tw-grid tw-grid-cols-4 tw-h-full tw-gap-10" data-aos="fade-up"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="200">
           <div class="tw-flex tw-justify-end">
             <typewriter
               :replace="replace"
@@ -107,7 +109,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-
+import aosMixin from '~/plugins/aos'
 export default Vue.extend({
   name: "IndexPage",
   data() {
@@ -115,6 +117,7 @@ export default Vue.extend({
       replace: [{ from: "A Software Engineer", to: "A Product Designer" }],
     };
   },
+  mixins: [aosMixin]
 });
 </script>
 <style lang="scss" scoped>
