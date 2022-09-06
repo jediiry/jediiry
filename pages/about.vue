@@ -40,13 +40,7 @@
           
          
         </div>
-        <div class="image-section tw-flex tw-flex-col tw-justify-end">
-
-    
-          <span class="tw-text-2xl tw-text-complimentry rotate tw-text-right"
-            >Hire Me <i class="bx bx-down-arrow-alt tw-text-primary"></i
-          ></span>
-        </div>
+        <Hire/>
       </div>
      
     </div>
@@ -67,7 +61,7 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .main-bg {
-  @apply tw-bg-secondary;
+  @apply tw-bg-secondary2;
   background-image: url("~/assets/images/jediiry3.svg");
   background-repeat: no-repeat;
   background-position: center top;

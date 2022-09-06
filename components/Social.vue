@@ -6,8 +6,8 @@
                 bx
                 bxl-github
                 tw-text-3xl
-                hover:tw-text-primary
-                tw-text-complimentry tw-cursor-pointer
+                hover:tw-text-complimentry
+                tw-text-white tw-cursor-pointer
               "
             ></i>
             <i
@@ -15,8 +15,8 @@
                 bx
                 bxl-instagram
                 tw-text-3xl
-                hover:tw-text-primary
-                tw-text-complimentry tw-cursor-pointer
+                hover:tw-text-complimentry
+                tw-text-white tw-cursor-pointer
               "
             ></i>
             <i
@@ -24,8 +24,8 @@
                 bx
                 bxl-twitter
                 tw-text-3xl
-                hover:tw-text-primary
-                tw-text-complimentry tw-cursor-pointer
+                hover:tw-text-complimentry
+                tw-text-white tw-cursor-pointer
               "
             ></i>
             <i
@@ -33,8 +33,8 @@
                 bx
                 bxl-facebook-circle
                 tw-text-3xl
-                hover:tw-text-primary
-                tw-text-complimentry tw-cursor-pointer
+                hover:tw-text-complimentry
+                tw-text-white tw-cursor-pointer
               "
             ></i>
             <i
@@ -42,8 +42,8 @@
                 bx
                 bxl-whatsapp
                 tw-text-3xl
-                hover:tw-text-primary
-                tw-text-complimentry tw-cursor-pointer
+                hover:tw-text-complimentry
+                tw-text-white tw-cursor-pointer
               "
             ></i>
           </div>

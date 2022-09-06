@@ -1,10 +1,12 @@
 <template>
   <div class="tw-flex tw-justify-between tw-items-center">
     <p
-      class="title tw-text-white tw-cursor-pointer"
+      class="title  tw-cursor-pointer tw-group"
+      :class="[color]"
       @click.prevent="$router.push({ path: '/' })"
     >
-      Obadoni <span class="tw-text-complimentry">.</span>
+      Obadoni
+      <span class="tw-text-complimentry group-hover:tw-text-primary">.</span>
     </p>
     <i
       @click.prevent="isVisible = true"
@@ -25,8 +27,8 @@
           tw-h-full tw-py-24 tw-flex tw-justify-between tw-flex-col
         "
       >
-        <div class="tw-flex tw-justify-between">
-          <p class="title tw-text-white">
+        <div class="tw-flex tw-justify-between tw-items-center">
+          <p class="title tw-text-white tw-cursor-pointer" @click.prevent="$router.push({ path: '/' })">
             Obadoni <span class="tw-text-complimentry">.</span>
           </p>
           <i
@@ -43,7 +45,7 @@
             "
           ></i>
         </div>
-        <div class="tw-space-y-10">
+        <div class="tw-space-y-8">
           <nuxt-link
             @click.native="setActiveMenu"
             to="/"
@@ -113,8 +115,9 @@
               <span>Technologies</span>
             </div>
           </nuxt-link>
+          <Social />
         </div>
-        <Social />
+        <div></div>
       </div>
     </div>
   </div>
@@ -122,6 +125,12 @@
 <script lang="ts">
 import Vue from "vue";
 export default Vue.extend({
+  props: {
+    color: {
+      type: String,
+      default: "tw-text-white",
+    },
+  },
   data() {
     return {
       isVisible: false,

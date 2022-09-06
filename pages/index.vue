@@ -15,8 +15,9 @@
 
             <typewriter
               :replace="replace"
-              :type-interval="50"
+              :type-interval="200"
               :replace-interval="500"
+              :start-delay="10"
             >
               <p class="main-font tw-text-8xl tw-text-primary">
                 Software Engineer
@@ -25,11 +26,7 @@
           </div>
           <Social />
         </div>
-        <div class="image-section tw-flex tw-flex-col tw-justify-end">
-          <span class="tw-text-2xl tw-text-complimentry rotate tw-text-right"
-            >Hire Me <i class="bx bx-down-arrow-alt tw-text-primary"></i
-          ></span>
-        </div>
+        <Hire/>
       </div>
       <div class="custom-bg" @click.prevent="$router.push({path:'/about'})">
         <i class="bx bx-right-arrow-alt"></i>
@@ -42,17 +39,20 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "IndexPage",
-  data() {
-    return {
-      replace: [{ from: "A Software Engineer", to: "A Product Designer" }],
-    };
-  },
+    name: "IndexPage",
+    data() {
+        return {
+            replace: [
+                { from: "Software Engineer", to: "Product Designer" },
+                { from: "Product Designer", to: "Software Engineer" },
+            ],
+        };
+    },
 });
 </script>
 <style lang="scss" scoped>
 .main-bg {
-  @apply tw-bg-secondary;
+  @apply tw-bg-secondary2;
   background-image: url("~/assets/images/jediiry3.svg");
   background-repeat: no-repeat;
   background-position: right top;
@@ -61,9 +61,7 @@ export default Vue.extend({
   @apply tw-text-xl tw-font-medium tw-text-white;
   letter-spacing: 1rem;
 }
-.rotate {
-  writing-mode: vertical-rl;
-}
+
 .arrow-position {
   right: 100vh - calc(50vh / 2);
   bottom: 10%;
