@@ -7,7 +7,7 @@
       "
     >
       <Logo />
-
+<!-- <Sample/> -->
       <div class="tw-grid tw-grid-cols-2 tw-h-5/6">
         <div class="tw-flex tw-flex-col tw-justify-evenly">
           <div class="tw-space-y-5">
@@ -25,9 +25,9 @@
           </div>
           <Social />
         </div>
-        <Hire/>
+        <Hire />
       </div>
-      <div class="custom-bg" @click.prevent="$router.push({path:'/about'})">
+      <div class="custom-bg" @click.prevent="$router.push({ path: '/about' })">
         <i class="bx bx-right-arrow-alt"></i>
       </div>
     </div>
@@ -38,15 +38,15 @@
 import Vue from "vue";
 
 export default Vue.extend({
-    name: "IndexPage",
-    data() {
-        return {
-            replace: [
-                { from: "Software Engineer", to: "Product Designer" },
-                { from: "Product Designer", to: "Software Engineer" },
-            ],
-        };
-    },
+  name: "IndexPage",
+  data() {
+    return {
+      replace: [
+        { from: "Software Engineer", to: "Product Designer" },
+        { from: "Product Designer", to: "Software Engineer" },
+      ],
+    };
+  },
 });
 </script>
 <style lang="scss" scoped>
@@ -67,7 +67,7 @@ export default Vue.extend({
 }
 .custom-bg {
   background-image: none;
-    background: black;
+  background: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,19 +82,15 @@ export default Vue.extend({
           tw-h-48;
 
   i {
-     visibility: visible;
-      @apply tw-text-primary;
-   
+    visibility: visible;
+    @apply tw-text-primary;
   }
   &:hover {
-    
-
     background-image: url("~/assets/images/oilpaint.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
     i {
       visibility: hidden;
-     
     }
   }
 }
