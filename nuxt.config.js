@@ -43,7 +43,7 @@ export default {
   plugins: [
     '~/plugins/axios',
     '~/plugins/aos',
-    '~/plugins/three',
+    // '~/plugins/three',
     { src: '~/plugins/custom', mode: 'client' },
   ],
 

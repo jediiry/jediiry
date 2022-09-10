@@ -6,8 +6,9 @@
         tw-h-full tw-py-24 tw-flex tw-flex-col tw-justify-between
       "
     >
-      <Logo />
-<!-- <Sample/> -->
+     <sample></sample>
+      <Logo></Logo>
+      
       <div class="tw-grid tw-grid-cols-2 tw-h-5/6">
         <div class="tw-flex tw-flex-col tw-justify-evenly">
           <div class="tw-space-y-5">
@@ -30,6 +31,7 @@
       <div class="custom-bg" @click.prevent="$router.push({ path: '/about' })">
         <i class="bx bx-right-arrow-alt"></i>
       </div>
+      
     </div>
   </div>
 </template>
