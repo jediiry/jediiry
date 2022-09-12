@@ -86,7 +86,7 @@
           </nuxt-link>
           <nuxt-link
             @click.native="setActiveMenu"
-            to="/dashboard"
+            to="/projects"
             exact
             class="
               tw-text-3xl
@@ -104,7 +104,7 @@
 
           <nuxt-link
             @click.native="setActiveMenu"
-            to="/dashboard"
+            to="/technologies"
             exact
             class="
               tw-text-3xl
