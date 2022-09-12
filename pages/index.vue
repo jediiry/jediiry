@@ -1,16 +1,17 @@
 <template>
   <div class="tw-h-screen main-bg">
+       <!-- <sample></sample> -->
+      <Logo></Logo>
     <div
       class="
         stable-alignment
-        tw-h-full tw-py-24 tw-flex tw-flex-col tw-justify-between
+        tw-h-full tw-py-24 tw-flex tw-flex-col tw-justify-center
       "
     >
-     <sample></sample>
-      <Logo></Logo>
+  
       
-      <div class="tw-grid tw-grid-cols-2 tw-h-5/6">
-        <div class="tw-flex tw-flex-col tw-justify-evenly">
+      <div class="tw-grid tw-grid-cols-2 tw-h-full tw-mt-10">
+        <div class="tw-flex tw-flex-col tw-justify-center tw-gap-10 ">
           <div class="tw-space-y-5">
             <p class="text-intro">I'M OBADONI HENRY</p>
 

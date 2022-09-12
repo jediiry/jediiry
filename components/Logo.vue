@@ -1,6 +1,7 @@
 <template>
-  <div class="tw-flex tw-justify-between tw-items-center tw-sticky tw-top-10 tw-z-50">
-    <p
+  <div class=" tw-flex tw-justify-center tw-w-full tw-py-16 tw-fixed tw-z-50" :class="[nav]">
+   <div class="tw-flex tw-justify-between tw-items-center stable-alignment">
+     <p
       class="title  tw-cursor-pointer tw-group"
       :class="[color]"
       @click.prevent="$router.push({ path: '/' })"
@@ -17,6 +18,7 @@
         tw-cursor-pointer
       "
     ></i>
+   </div>
     <div data-aos="fade-down"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="200"
@@ -26,7 +28,7 @@
       <div
         class="
           stable-alignment
-          tw-h-full tw-py-24 tw-flex tw-justify-between tw-flex-col
+          tw-h-full tw-py-16 tw-flex tw-justify-between tw-flex-col
         "
       >
         <div class="tw-flex tw-justify-between tw-items-center">
@@ -154,9 +156,26 @@ export default Vue.extend({
   data() {
     return {
       isVisible: false,
+      nav:""
     };
   },
-  mixins: [aosMixin]
+  mixins: [aosMixin],
+  methods:{
+     scroll() {
+      window.onscroll = () => {
+        let topOfWindow = window.pageYOffset
+
+        if (topOfWindow > 50) {
+          this.nav = 'tw-blur-xl tw-bg-transparent'
+        } else {
+          this.nav = ''
+        }
+      }
+    },
+  },
+  mounted() {
+    this.scroll()
+  },
 });
 </script>
 <style lang="scss">

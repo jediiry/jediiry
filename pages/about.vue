@@ -1,12 +1,13 @@
 <template>
-  <div class="tw-min-h-screen main-bg">
+  <div class="tw-h-screen main-bg">
+    <Logo />
     <div
       class="
         stable-alignment
-        tw-h-full tw-py-24 tw-flex tw-flex-col tw-justify-between tw-space-y-24
+        tw-h-full tw-py-24 tw-flex tw-flex-col tw-justify-center tw-items-center tw-space-y-24
       "
     >
-      <Logo />
+      
 
       <div class="tw-grid tw-grid-cols-5 tw-h-full">
 
