@@ -1,28 +1,26 @@
 <template>
   <div class="tw-h-screen main-bg">
-       <!-- <sample></sample> -->
-      <Logo></Logo>
-    <div
+    <!-- <sample></sample> -->
+    <Logo></Logo>
+    <div data-aos="fade-down"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="200"
       class="
         stable-alignment
         tw-h-full tw-py-24 tw-flex tw-flex-col tw-justify-center
       "
     >
-  
-      
       <div class="tw-grid tw-grid-cols-2 tw-h-full tw-mt-10">
-        <div class="tw-flex tw-flex-col tw-justify-center tw-gap-10 ">
-          <div class="tw-space-y-5">
+        <div class="tw-flex tw-flex-col tw-justify-center tw-gap-10">
+          <div class="tw-space-y-2">
             <p class="text-intro">I'M OBADONI HENRY</p>
-
+            <p class="main-font tw-text-8xl tw-text-white">Creative</p>
             <typewriter
               :replace="replace"
               :type-interval="200"
               :replace-interval="100"
             >
-              <p class="main-font tw-text-8xl tw-text-primary">
-                Software Engineer
-              </p>
+              <p class="main-font tw-text-8xl tw-text-primary">Developer</p>
             </typewriter>
           </div>
           <Social />
@@ -32,7 +30,6 @@
       <div class="custom-bg" @click.prevent="$router.push({ path: '/about' })">
         <i class="bx bx-right-arrow-alt"></i>
       </div>
-      
     </div>
   </div>
 </template>
@@ -45,8 +42,8 @@ export default Vue.extend({
   data() {
     return {
       replace: [
-        { from: "Software Engineer", to: "Product Designer" },
-        { from: "Product Designer", to: "Software Engineer" },
+        { from: "Developer", to: "Designer" },
+        // { from: "Designer", to: "Freelancer" },
       ],
     };
   },
@@ -65,24 +62,25 @@ export default Vue.extend({
 }
 
 .arrow-position {
-  right: 100vh - calc(50vh / 2);
+  right: 100vh - calc(80vh / 2);
   bottom: 10%;
 }
 .custom-bg {
   background-image: none;
   background: black;
+  // background: #191b1c;
   display: flex;
   justify-content: center;
   align-items: center;
   filter: grayscale(10%);
-  @apply tw-p-6 tw-text-8xl 
+  @apply tw-p-5 tw-text-8xl 
           tw-fixed 
           tw-rounded-full
         tw-text-secondary
           arrow-position
           tw-cursor-pointer
-          tw-w-48
-          tw-h-48;
+          tw-w-32
+          tw-h-32;
 
   i {
     visibility: visible;

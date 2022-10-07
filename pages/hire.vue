@@ -136,7 +136,7 @@ export default Vue.extend({
 .main-bg {
   background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(45deg, #3e4a3d, #1d1d1d);
+  background: linear-gradient(45deg,theme("colors.secondary2"), #1d1d1d);
   background-blend-mode: difference;
 }
 .text-intro {

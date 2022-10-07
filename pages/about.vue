@@ -1,7 +1,9 @@
 <template>
   <div class="tw-h-screen main-bg">
     <Logo />
-    <div
+    <div data-aos="fade-down"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="200"
       class="
         stable-alignment
         tw-h-full tw-py-24 tw-flex tw-flex-col tw-justify-center tw-items-center tw-space-y-24
@@ -62,7 +64,7 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .main-bg {
-  @apply tw-bg-secondary2;
+  background-color: #0e0e0e;
   background-image: url("~/assets/images/jediiry3.svg");
   background-repeat: no-repeat;
   background-position: center top;

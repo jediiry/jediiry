@@ -8,6 +8,10 @@
 </template>
 <script>
 import * as THREE from "three";
+import pythonTextureLader from "~/assets/images/python.webp";
+import javascriptTextureLader from "~/assets/images/javascript.png";
+import nodejsTextureLader from "~/assets/images/nodejs.png";
+import golangTextureLader from "~/assets/images/golang.png";
 // import { OrbitControls } from "@three-ts/orbit-controls";
 export default {
   name: "threejs",
@@ -22,11 +26,18 @@ export default {
       mouseY: null,
       windowHalfX: null,
       windowHalfY: null,
+      raycaster: null,
+      mouse: null,
     };
   },
   methods: {
+    getImageToDisplay(displayArray) {
+      return displayArray[Math.floor(Math.random() * displayArray.length)];
+    },
     init: function () {
       let container = document.getElementById("box");
+      this.raycaster = new THREE.Raycaster();
+      this.mouse = new THREE.Vector2();
 
       this.camera = new THREE.PerspectiveCamera(
         70,
@@ -40,14 +51,34 @@ export default {
       this.scene.background = new THREE.Color(0x2b2b2b);
       this.scene.fog = new THREE.Fog(0x2b2b2b, 1, 10000);
 
-    //   let geometry = new THREE.TorusGeometry(1, 10, 16, 100);
-    //   let material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    let geometry = new THREE.BoxBufferGeometry(100, 100, 100);
-  let material = new THREE.MeshNormalMaterial();
+      // const geometry = new THREE.BoxGeometry( 100, 100, 100 );
+      let geometry = new THREE.BoxBufferGeometry(100, 100, 100);
+      let pythonTexture = new THREE.TextureLoader().load(pythonTextureLader);
+      let pythonMaterial = new THREE.MeshBasicMaterial({ map: pythonTexture });
+      let nodeTexture = new THREE.TextureLoader().load(nodejsTextureLader);
+      let nodeMaterial = new THREE.MeshBasicMaterial({ map: nodeTexture });
+      let javascriptTexture = new THREE.TextureLoader().load(
+        javascriptTextureLader
+      );
+      let javascriptMaterial = new THREE.MeshBasicMaterial({
+        map: javascriptTexture,
+      });
+      let golangTexture = new THREE.TextureLoader().load(golangTextureLader);
+      let golangMaterial = new THREE.MeshBasicMaterial({
+        map: golangTexture,
+      });
 
       this.group = new THREE.Group();
       for (var i = 0; i < 500; i++) {
-        this.mesh = new THREE.Mesh(geometry, material);
+        this.mesh = new THREE.Mesh(
+          geometry,
+          this.getImageToDisplay([
+            pythonMaterial,
+            javascriptMaterial,
+            nodeMaterial,
+            golangMaterial,
+          ])
+        );
         this.mesh.position.x = Math.random() * 2000 - 1000;
         this.mesh.position.y = Math.random() * 2000 - 1000;
         this.mesh.position.z = Math.random() * 2000 - 1000;
@@ -66,9 +97,9 @@ export default {
       this.renderer.setSize(container.clientWidth, container.clientHeight);
       container.appendChild(this.renderer.domElement);
 
-
-      container.addEventListener('mousemove', this.onDocumentMouseMove, false);
-  window.addEventListener('resize', this.onWindowResize, false);
+      document.addEventListener("mousemove", this.onDocumentMouseMove, true);
+      window.addEventListener("mouseclick", this.onMouseClick, false);
+      window.addEventListener("resize", this.onWindowResize, false);
     },
     onWindowResize: function () {
       this.windowHalfX = window.innerWidth / 2;
@@ -82,8 +113,17 @@ export default {
       this.render();
     },
     onDocumentMouseMove: function (event) {
-      this.mouseX = (event.clientX - this.windowHalfX) * 10;
-      this.mouseY = (event.clientY - this.windowHalfY) * 10;
+      this.mouseX = (event.clientX - this.windowHalfX) * 2;
+      this.mouseY = (event.clientY - this.windowHalfY) * 2;
+    },
+    onMouseClick: function (event) {
+      console.log(event);
+      this.raycaster.setFromCamera(event.clientX, this.camera);
+      alert('henry')
+      var isIntersected = raycaster.intersectObject(this.mesh);
+      if (isIntersected) {
+        alert('henry')
+      }
     },
     render: function () {
       let time = Date.now() * 0.001;
