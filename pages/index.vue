@@ -15,7 +15,7 @@
         <div class="tw-flex tw-flex-col tw-justify-end md:tw-justify-center tw-gap-4 md:tw-gap-10">
           <div class="tw-space-y-2">
 
-          <Hire class="tw-block md:tw-hidden" />
+        
             <p class="text-intro">I'M OBADONI HENRY</p>
             <p class="tw-hidden md:tw-block main-font tw-text-5xl md:tw-text-8xl tw-text-white">
               Creative
@@ -28,6 +28,7 @@
               <p class="main-font tw-text-5xl md:tw-text-8xl tw-text-primary">
                 Developer</p>
             </typewriter>
+              <Hire class="tw-block md:tw-hidden" />
           </div>
           <Social class="tw-hidden md:tw-block" />
         </div>
@@ -62,7 +63,7 @@ export default Vue.extend({
   background-repeat: no-repeat;
   background-position: right top;
   @media (max-width: 768px) {
-    background-position: right center;
+    background-position: center center;
   }
 }
 .text-intro {
