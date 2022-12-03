@@ -7,7 +7,7 @@
     >
       <Logo color="tw-text-white" />
 
-      <div class="tw-grid tw-grid-cols-7 tw-min-h-screen md:tw-h-screen">
+      <div class="tw-grid tw-grid-cols-7 tw-h-screen">
         <div
           class="
           tw-col-span-7
