@@ -1,18 +1,13 @@
 <template>
-  <div class="tw-bg-secondary tw-min-h-screen md:tw-h-screen">
-    <Logo color="tw-text-white" />
+  <div class="tw-bg-secondary ">
     <div
       data-aos="fade-down"
       data-aos-easing="ease-out-cubic"
       data-aos-duration="200"
-       class="
-        stable-alignment
-        tw-h-full tw-pt-36 tw-pb-16 tw-flex tw-justify-center tw-items-center
-      "
     >
-      
+      <Logo color="tw-text-white" />
 
-      <div class="tw-grid tw-grid-cols-7 tw-h-full">
+      <div class="tw-grid tw-grid-cols-7 tw-min-h-screen md:tw-h-screen">
         <div
           class="
           tw-col-span-7
@@ -25,7 +20,7 @@
             tw-z-40
           "
         >
-          <div class="tw-space-y-12 tw-px-3 md:tw-col-start-2 tw-col-span-5 md:tw-col-span-3">
+          <div class="tw-space-y-12 tw-pt-32 tw-pb-5 tw-px-10 md:tw-col-start-2 tw-col-span-5 md:tw-col-span-3">
             <p class="main-font tw-text-5xl tw-text-primary">
               {{ allTechs[index]["technology"] }}
             </p>
@@ -74,7 +69,7 @@
             </p>
           </div>
         </div>
-        <div class="tw-col-span-7 tw-hidden md:tw-block md:tw-col-span-4 tw-relative">
+        <div class="tw-col-span-7 md:tw-col-span-4 tw-relative">
           <alltech></alltech>
         </div>
       </div>
@@ -97,11 +92,6 @@ export default Vue.extend({
       accusamus explicabo. Nesciunt similique aliquid minus ex, 
       architecto voluptatem libero incidunt numquam, placeat ut fugit
       voluptate unde. Illo delectus expedita maiores quidem assumenda 
-      amet voluptate culpa, eveniet sint, et mollitia Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Temporibus, a cumque eveniet cupiditate cum voluptatem aspernatur 
-      accusamus explicabo. Nesciunt similique aliquid minus ex, 
-      architecto voluptatem libero incidunt numquam, placeat ut fugit
-      voluptate unde. Illo delectus expedita maiores quidem assumenda 
       amet voluptate culpa, eveniet sint, et mollitia`,
         },
         {
@@ -109,14 +99,7 @@ export default Vue.extend({
           description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
       Temporibus, a cumque eveniet cupiditate cum voluptatem aspernatur 
       accusamus explicabo. Nesciunt similique aliquid minus ex, 
-      architecto voluptatem libero incidunt numquam, placeat ut fugit
-      voluptate unde. Illo delectus expedita maiores quidem assumenda 
-      amet voluptate culpa, eveniet sint, et mollitian Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Temporibus, a cumque eveniet cupiditate cum voluptatem aspernatur 
-      accusamus explicabo. Nesciunt similique aliquid minus ex, 
-      architecto voluptatem libero incidunt numquam, placeat ut fugit
-      voluptate unde. Illo delectus expedita maiores quidem assumenda 
-      amet voluptate culpa, eveniet sint, et mollitia`,
+      architecto voluptatem libero incidunt numquam, `,
         },
         {
           technology: "Golang",
@@ -125,12 +108,7 @@ export default Vue.extend({
       accusamus explicabo. Nesciunt similique aliquid minus ex, 
       architecto voluptatem libero incidunt numquam, placeat ut fugit
       voluptate unde. Illo delectus expedita maiores quidem assumenda 
-      amet voluptate culpa, eveniet sint, et mollitia Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Temporibus, a cumque eveniet cupiditate cum voluptatem aspernatur 
-      accusamus explicabo. Nesciunt similique aliquid minus ex, 
-      architecto voluptatem libero incidunt numquam, placeat ut fugit
-      voluptate unde. Illo delectus expedita maiores quidem assumenda 
-      amet voluptate culpa, eveniet sint, et mollitia`,
+      amet voluptate culpa, eveniet sint`,
         },
       ],
     };
