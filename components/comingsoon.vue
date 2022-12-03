@@ -108,7 +108,7 @@ export default {
       prevNextButtons: false,
       pageDots: true,
       wrapAround: false,
-      autoPlay: 1500,
+      autoPlay: 5000,
       draggable: true,
       freeScroll: true,
       contain: true,
@@ -119,7 +119,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .show_bg_2 {
   width: 500px;
   height: 300px;
@@ -130,6 +130,9 @@ export default {
 .carousel-cell {
   min-width: 300px;
   margin-right: 50px;
+   @media (max-width: 768px) {
+     width: 90%;
+  }
 }
 .carousel-control {
   position: absolute;
