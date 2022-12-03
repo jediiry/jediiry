@@ -17,7 +17,7 @@
 
         
             <p class="text-intro">I'M OBADONI HENRY</p>
-            <p class="tw-hidden md:tw-block main-font tw-text-5xl md:tw-text-8xl tw-text-white">
+            <p class="main-font tw-text-5xl md:tw-text-8xl tw-text-white">
               Creative
             </p>
             <typewriter 
