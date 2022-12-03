@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <div class="carousel-control">
+      <div class="tw-hidden md:tw-block carousel-control">
         <div class="tw-flex tw-justify-between tw-w-full">
           <button class="tw-left-control" @click="previousSlide">
             <span class="material-icons tw-text-black">arrow_back</span>

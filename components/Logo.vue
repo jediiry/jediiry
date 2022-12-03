@@ -1,5 +1,5 @@
 <template>
-  <div class=" tw-flex tw-justify-center tw-w-full tw-py-16 tw-fixed tw-z-50" :class="[nav]">
+  <div class=" tw-flex tw-justify-center tw-w-full tw-py-3 md:tw-py-16 tw-fixed tw-z-50" :class="[nav]">
    <div class="tw-flex tw-justify-between tw-items-center stable-alignment">
      <p
       class="title  tw-cursor-pointer tw-group"
@@ -13,7 +13,7 @@
       @click.prevent="isVisible = true"
       class="
         bx bx-menu
-        tw-text-5xl tw-bg-black tw-p-3 tw-rounded-full tw-text-complimentry
+        tw-text-3xl md:tw-text-5xl md:tw-bg-black tw-p-3 tw-rounded-full tw-text-complimentry
         hover:tw-text-compgreen
         tw-cursor-pointer
       "
@@ -28,7 +28,7 @@
       <div
         class="
           stable-alignment
-          tw-h-full tw-py-16 tw-flex tw-justify-between tw-flex-col
+          tw-h-full tw-py-8 md:tw-py-16 tw-flex tw-justify-between tw-flex-col
         "
       >
         <div class="tw-flex tw-justify-between tw-items-center">
@@ -39,8 +39,9 @@
             @click.prevent="isVisible = false"
             class="
               bx bx-x
-              tw-text-5xl
-              tw-bg-black
+              tw-text-3xl
+              md:tw-text-5xl
+              md:tw-bg-black
               tw-p-3
               tw-rounded-full
               tw-text-complimentry
@@ -165,8 +166,8 @@ export default Vue.extend({
       window.onscroll = () => {
         let topOfWindow = window.pageYOffset
 
-        if (topOfWindow > 50) {
-          this.nav = 'tw-blur-xl tw-bg-transparent'
+        if (topOfWindow > 20) {
+          this.nav = 'tw-blur-3xl tw-bg-secondary'
         } else {
           this.nav = ''
         }

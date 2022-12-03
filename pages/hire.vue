@@ -4,16 +4,16 @@
     <div
       class="
         stable-alignment
-        tw-h-full tw-py-48 tw-flex tw-flex-col tw-justify-between tw-space-y-24
+        tw-h-full tw-pt-36 tw-pb-10 md:tw-py-48 tw-flex tw-flex-col tw-justify-between tw-space-y-24
       "
     >
       <div
-        class="tw-grid tw-grid-cols-4 tw-h-full tw-gap-10"
+        class="tw-grid md:tw-grid-cols-4 tw-h-full tw-gap-10"
         data-aos="fade-up"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="200"
       >
-        <div class="tw-flex tw-justify-end">
+        <div class="tw-hidden md:tw-flex tw-justify-end">
           <typewriter
             :replace="replace"
             :type-interval="200"
@@ -24,7 +24,7 @@
         </div>
         <div
           class="
-            tw-flex tw-flex-col tw-justify-evenly tw-col-span-2 tw-col-start-2
+            tw-flex tw-flex-col tw-justify-evenly tw-col-span-2 md:tw-col-start-2
           "
         >
           <div class="tw-space-y-10">

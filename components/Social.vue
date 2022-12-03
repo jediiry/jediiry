@@ -1,6 +1,6 @@
 <template>
     <div>
-         <div class="tw-flex tw-gap-2">
+         <div class="tw-flex md:tw-gap-2">
             <i
               class="
                 bx

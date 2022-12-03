@@ -2,30 +2,36 @@
   <div class="tw-h-screen main-bg">
     <!-- <sample></sample> -->
     <Logo></Logo>
-    <div data-aos="fade-down"
-     data-aos-easing="ease-out-cubic"
-     data-aos-duration="200"
+    <div
+      data-aos="fade-down"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="200"
       class="
         stable-alignment
-        tw-h-full tw-py-24 tw-flex tw-flex-col tw-justify-center
+        tw-h-full tw-py-16 md:tw-py-24 tw-flex tw-flex-col tw-justify-center
       "
     >
-      <div class="tw-grid tw-grid-cols-2 tw-h-full tw-mt-10">
-        <div class="tw-flex tw-flex-col tw-justify-center tw-gap-10">
+      <div class="tw-grid md:tw-grid-cols-2 tw-h-full tw-mt-10">
+        <div class="tw-flex tw-flex-col tw-justify-end md:tw-justify-center tw-gap-4 md:tw-gap-10">
           <div class="tw-space-y-2">
+
+          <Hire class="tw-block md:tw-hidden" />
             <p class="text-intro">I'M OBADONI HENRY</p>
-            <p class="main-font tw-text-8xl tw-text-white">Creative</p>
-            <typewriter
+            <p class="tw-hidden md:tw-block main-font tw-text-5xl md:tw-text-8xl tw-text-white">
+              Creative
+            </p>
+            <typewriter 
               :replace="replace"
               :type-interval="200"
               :replace-interval="100"
             >
-              <p class="main-font tw-text-8xl tw-text-primary">Developer</p>
+              <p class="main-font tw-text-5xl md:tw-text-8xl tw-text-primary">
+                Developer</p>
             </typewriter>
           </div>
-          <Social />
+          <Social class="tw-hidden md:tw-block" />
         </div>
-        <Hire />
+        <Hire class="tw-hidden md:tw-block" />
       </div>
       <div class="custom-bg" @click.prevent="$router.push({ path: '/about' })">
         <i class="bx bx-right-arrow-alt"></i>
@@ -52,13 +58,15 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .main-bg {
   @apply tw-bg-secondary2;
-  // background-image: url("~/assets/images/jediiry3.svg");
+  background-image: url("~/assets/images/jediiry3.svg");
   background-repeat: no-repeat;
   background-position: right top;
+  @media (max-width: 768px) {
+    background-position: right center;
+  }
 }
 .text-intro {
-  @apply tw-text-xl tw-font-medium tw-text-white;
-  letter-spacing: 1rem;
+  @apply tw-text-xl tw-font-medium tw-text-white tw-tracking-widest;
 }
 
 .arrow-position {

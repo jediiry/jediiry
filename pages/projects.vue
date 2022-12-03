@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-h-screen main-bg">
+  <div class="tw-min-h-screen md:tw-h-screen main-bg">
     <Logo />
     <div
       data-aos="fade-down"
@@ -7,7 +7,7 @@
       data-aos-duration="200"
       class="
         stable-alignment
-        tw-h-full tw-flex tw-justify-center tw-items-center
+        tw-h-full tw-pt-36 tw-pb-16 tw-flex tw-justify-center tw-items-center
       "
     >
       <div
@@ -15,14 +15,14 @@
           tw-w-full tw-h-full tw-flex tw-items-center tw-space-y-4 
         "
       >
-        <div class="tw-pt-24">
+        <div class="md:tw-pt-24">
           <div>
             <typewriter
               :replace="replace"
               :type-interval="200"
               :replace-interval="500"
             >
-              <p class="main-font tw-text-8xl tw-text-primary">Projects</p>
+              <p class="main-font tw-text-5xl md:tw-text-8xl tw-text-primary">Projects</p>
             </typewriter>
           </div>
           <p class="tw-text-white tw-pt-6">
@@ -75,7 +75,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .main-bg {
   background-color: #0e0e0e;
-  background-image: url("~/assets/images/jediiry3.svg");
+  // background-image: url("~/assets/images/jediiry3.svg");
   background-repeat: no-repeat;
   background-position: center top;
 }

@@ -30,7 +30,7 @@ export default Vue.extend({
 }
 
 .stable-alignment {
-  @apply tw-w-11/12 tw-m-auto;
+  @apply tw-w-10/12 tw-m-auto;
 }
 
 @screen md {

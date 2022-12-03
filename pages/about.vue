@@ -1,26 +1,26 @@
 <template>
-  <div class="tw-h-screen main-bg">
+  <div class="tw-min-h-screen md:tw-h-screen main-bg">
     <Logo />
     <div data-aos="fade-down"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="200"
       class="
         stable-alignment
-        tw-h-full tw-py-24 tw-flex tw-flex-col tw-justify-center tw-items-center tw-space-y-24
+        tw-h-full tw-pt-36 tw-pb-16 md:tw-py-48 tw-flex tw-flex-col tw-justify-center tw-items-center tw-space-y-24
       "
     >
       
 
-      <div class="tw-grid tw-grid-cols-5 tw-h-full">
+      <div class="tw-grid md:tw-grid-cols-5 tw-h-full">
 
         <div class="tw-flex tw-flex-col tw-justify-evenly tw-col-span-3 tw-col-start-2">
-          <div class="tw-space-y-10">
+          <div class="tw-space-y-4 md:tw-space-y-10">
             <typewriter
               :replace="replace"
               :type-interval="200"
               :replace-interval="500"
             >
-              <p class="main-font tw-text-8xl tw-text-primary">About me</p>
+              <p class="main-font tw-text-5xl md:tw-text-8xl tw-text-primary">About me</p>
             </typewriter>
 
             <p class="tw-text-white">
@@ -43,7 +43,7 @@
           
          
         </div>
-        <Hire/>
+        <Hire class="tw-hidden md:tw-block"/>
       </div>
      
     </div>
@@ -68,6 +68,9 @@ export default Vue.extend({
   background-image: url("~/assets/images/jediiry3.svg");
   background-repeat: no-repeat;
   background-position: center top;
+   @media (max-width: 768px) {
+    background-position: right center;
+  }
 }
 .text-intro {
   @apply tw-text-xl tw-font-medium tw-text-white;
