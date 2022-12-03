@@ -131,7 +131,7 @@ export default {
   min-width: 300px;
   margin-right: 50px;
    @media (max-width: 768px) {
-     width: 90%;
+     width: 200px;
   }
 }
 .carousel-control {
