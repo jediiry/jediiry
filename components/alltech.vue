@@ -148,7 +148,7 @@ export default {
 <style>
 .canvas_for_three {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
