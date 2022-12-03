@@ -145,7 +145,7 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="scss" scoped>
 .canvas_for_three {
   width: 100%;
   height: 100vh;
@@ -157,5 +157,8 @@ export default {
   /* left: 0px;
   bottom: 0px; */
   z-index: 20;
+    @media (max-width: 768px) {
+     height: 30vh;
+  }
 }
 </style>

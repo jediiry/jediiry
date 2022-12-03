@@ -1,6 +1,6 @@
 <template>
   <div class="tw-min-h-screen main-bg">
-    <Logo color="tw-text-white" />
+    <Logo />
     <div
       class="
         stable-alignment
