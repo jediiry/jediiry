@@ -69,7 +69,7 @@
             </p>
           </div>
         </div>
-        <div class="tw-col-span-7 md:tw-col-span-4 tw-relative">
+        <div class="tw-hidden md:tw-block tw-col-span-7 md:tw-col-span-4 tw-relative">
           <alltech></alltech>
         </div>
       </div>
