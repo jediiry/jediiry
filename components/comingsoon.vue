@@ -130,9 +130,7 @@ export default {
 .carousel-cell {
   min-width: 300px;
   margin-right: 50px;
-   @media (max-width: 768px) {
-     width: 200px;
-  }
+ 
 }
 .carousel-control {
   position: absolute;
