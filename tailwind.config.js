@@ -10,6 +10,7 @@ module.exports = {
         secondary: "#1d1d1d",
         secondary2: "#131216",
         secondary3: "#242825",
+        secondary4: "#0e0e0e",
         complimentry: "#00FF47",
         compgreen: "#3E4A3D",
       },

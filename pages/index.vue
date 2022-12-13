@@ -58,7 +58,7 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .main-bg {
-  @apply tw-bg-secondary2;
+  @apply tw-bg-secondary4;
   background-image: url("~/assets/images/jediiry3.svg");
   background-repeat: no-repeat;
   background-position: right top;
