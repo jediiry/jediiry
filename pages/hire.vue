@@ -1,6 +1,6 @@
 <template>
   <div class="tw-min-h-screen main-bg">
-    <Logo />
+    <Logo customClass="md:tw-py-7" />
     <div
       class="
         stable-alignment

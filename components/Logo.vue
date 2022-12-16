@@ -1,5 +1,5 @@
 <template>
-  <div class=" tw-flex tw-justify-center tw-w-full tw-py-5 md:tw-py-16 tw-fixed tw-z-50" :class="[nav]">
+  <div class=" tw-flex tw-justify-center tw-w-full tw-py-3 tw-fixed tw-z-50" :class="[nav, customClass]">
    <div class="tw-flex tw-justify-between tw-items-center stable-alignment">
      <p
       class="title  tw-cursor-pointer tw-group"
@@ -153,6 +153,10 @@ export default Vue.extend({
       type: String,
       default: "tw-text-white",
     },
+    customClass:{
+      type: String,
+      default:'md:tw-py-16'
+    }
   },
   data() {
     return {
