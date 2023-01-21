@@ -8,31 +8,34 @@
       data-aos-duration="200"
       class="
         stable-alignment
-        tw-h-full tw-py-16 md:tw-py-24 tw-flex tw-flex-col tw-justify-center
+        tw-h-full tw-py-16
+        md:tw-py-24
+        tw-flex tw-flex-col tw-justify-end tw-items-center tw-gap-10
       "
     >
-      <div class="tw-grid md:tw-grid-cols-2 tw-h-full tw-mt-10">
-        <div class="tw-flex tw-flex-col tw-justify-end md:tw-justify-center tw-gap-4 md:tw-gap-10">
-          <div class="tw-space-y-2">
-
-        
+      <div>
+        <div
+          class="
+            tw-flex tw-flex-col tw-justify-end
+            md:tw-justify-center
+            tw-gap-4
+          "
+        >
+          <div class="tw-space-y-2 tw-text-center">
             <p class="text-intro">I'M OBADONI HENRY</p>
             <p class="main-font tw-text-5xl md:tw-text-8xl tw-text-white">
-              Creative
+              A Creative
             </p>
-            <typewriter 
+            <typewriter
               :replace="replace"
               :type-interval="200"
               :replace-interval="100"
             >
-              <p class="main-font tw-text-5xl md:tw-text-8xl tw-text-primary">
-                Developer</p>
+              <p class="main-font tw-text-5xl md:tw-text-8xl tw-text-primary">Developer
+              </p>
             </typewriter>
-              <Hire class="tw-block md:tw-hidden" />
           </div>
-          <Social class="tw-hidden md:tw-block" />
         </div>
-        <Hire class="tw-hidden md:tw-block" />
       </div>
       <div class="custom-bg" @click.prevent="$router.push({ path: '/about' })">
         <i class="bx bx-right-arrow-alt"></i>
@@ -61,7 +64,7 @@ export default Vue.extend({
   @apply tw-bg-secondary4;
   background-image: url("~/assets/images/jediiry3.svg");
   background-repeat: no-repeat;
-  background-position: right top;
+  background-position: center center;
   @media (max-width: 768px) {
     background-position: center center;
   }
@@ -76,14 +79,14 @@ export default Vue.extend({
 }
 .custom-bg {
   background-image: none;
-  background: black;
+  background-image: url("~/assets/images/oilpaint.jpeg");
+ 
   // background: #191b1c;
   display: flex;
   justify-content: center;
   align-items: center;
   filter: grayscale(10%);
   @apply tw-p-5 tw-text-8xl 
-          tw-fixed 
           tw-rounded-full
         tw-text-secondary
           arrow-position
@@ -92,15 +95,15 @@ export default Vue.extend({
           tw-h-32;
 
   i {
-    visibility: visible;
+    visibility: hidden;
     @apply tw-text-primary;
   }
   &:hover {
-    background-image: url("~/assets/images/oilpaint.jpeg");
+     background: black;
     background-repeat: no-repeat;
     background-size: cover;
     i {
-      visibility: hidden;
+      visibility: visible;
     }
   }
 }

@@ -5,12 +5,12 @@
               class="
                 bx
                 bxl-github
-                tw-text-3xl
-                hover:tw-text-complimentry
+                tw-text-7xl
+                hover:tw-text-primary
                 tw-text-white tw-cursor-pointer
               "
             ></i>
-            <i
+            <!-- <i
               class="
                 bx
                 bxl-instagram
@@ -45,7 +45,7 @@
                 hover:tw-text-complimentry
                 tw-text-white tw-cursor-pointer
               "
-            ></i>
+            ></i> -->
           </div>
     </div>
 </template>

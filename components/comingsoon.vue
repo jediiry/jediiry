@@ -107,7 +107,7 @@ export default {
       initialIndex: 1,
       prevNextButtons: false,
       pageDots: true,
-      wrapAround: false,
+      wrapAround: true,
       autoPlay: 5000,
       draggable: true,
       freeScroll: true,
