@@ -1,51 +1,65 @@
 <template>
   <div class="tw-min-h-screen md:tw-h-screen main-bg">
     <Logo />
-    <div data-aos="fade-down"
-     data-aos-easing="ease-out-cubic"
-     data-aos-duration="200"
+    <div
+      data-aos="fade-down"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="200"
       class="
         stable-alignment
-        tw-h-full tw-pt-36 tw-pb-16 md:tw-py-48 tw-flex tw-flex-col tw-justify-center tw-items-center tw-space-y-24
+        tw-h-full tw-pt-36 tw-pb-16
+        md:tw-py-48
+        tw-flex tw-flex-col tw-justify-center tw-items-center tw-space-y-24
       "
     >
-      
-
       <div class="tw-grid md:tw-grid-cols-5 tw-h-full">
-
-        <div class="tw-flex tw-flex-col tw-justify-evenly tw-col-span-3 tw-col-start-2">
+        <div
+          class="
+            tw-flex tw-flex-col tw-justify-evenly tw-col-span-3 tw-col-start-2
+          "
+        >
           <div class="tw-space-y-4 md:tw-space-y-10">
             <typewriter
               :replace="replace"
               :type-interval="200"
-              :replace-interval="500"
+              :replace-interval="100"
             >
-              <p class="main-font tw-text-5xl md:tw-text-8xl tw-text-primary">About me</p>
+              <p class="main-font tw-text-5xl md:tw-text-8xl tw-text-primary">
+                About me
+              </p>
             </typewriter>
 
             <p class="tw-text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus, a cumque eveniet cupiditate cum voluptatem aspernatur
-              accusamus explicabo. Nesciunt similique aliquid minus ex,
-              architecto voluptatem libero incidunt numquam, placeat ut fugit
-              voluptate unde. Illo delectus expedita maiores quidem assumenda
-              amet voluptate culpa, eveniet sint, et mollitia ut placeat. Eum
-              nesciunt ad facilis asperiores ipsa, tempore explicabo molestias
-              laborum accusamus provident neque cumque. Ab aliquid ducimus
-              similique sed! Pariatur cum hic similique praesentium ipsam atque.
-              Cupiditate aut accusantium repellat, eos eaque ex autem vitae
-              nostrum dignissimos fugit odit iste blanditiis dolorem.
+              I am a software developer with over 5 years of experience, I have a
+              strong background in several programming languages and
+              technologies, including but not limited to Python, Node.js, Golang and Javascript. I have a passion for problem-solving and
+              creating innovative solutions, and I am always eager to learn new
+              technologies and programming languages. Throughout my career, I
+              have had the opportunity to work on a wide range of projects, from
+              developing mobile apps to building complex systems for large
+              organizations. 
             </p>
-            <div class="tw-flex tw-items-center tw-gap-4 tw-cursor-pointer tw-group">
-            <i class='bx group-hover:tw-text-complimentry tw-text-primary tw-text-5xl bxs-cloud-download'></i> <span class="main-font tw-text-2xl tw-text-white">curriculum vitae</span>
+            <div
+              class="
+                tw-flex tw-items-center tw-gap-4 tw-cursor-pointer tw-group
+              "
+            >
+              <i
+                class="
+                  bx
+                  group-hover:tw-text-complimentry
+                  tw-text-primary tw-text-5xl
+                  bxs-cloud-download
+                "
+              ></i>
+              <span class="main-font tw-text-2xl tw-text-white"
+                >curriculum vitae</span
+              >
+            </div>
           </div>
-          </div>
-          
-         
         </div>
-        <Hire class="tw-hidden md:tw-block"/>
+        <Hire class="tw-hidden md:tw-block" />
       </div>
-     
     </div>
   </div>
 </template>
@@ -67,8 +81,8 @@ export default Vue.extend({
   background-color: #0e0e0e;
   background-image: url("~/assets/images/jediiry3.svg");
   background-repeat: no-repeat;
-  background-position: center top;
-   @media (max-width: 768px) {
+  background-position: center center;
+  @media (max-width: 768px) {
     background-position: right center;
   }
 }
