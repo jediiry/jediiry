@@ -10,13 +10,13 @@
         stable-alignment
         tw-h-full tw-py-16
         md:tw-py-24
-        tw-flex tw-flex-col tw-justify-end tw-items-center tw-gap-10
+        tw-flex tw-flex-col tw-justify-center tw-items-center tw-gap-10
       "
     >
-      <div>
+      <div class="tw-mt-36">
         <div
           class="
-            tw-flex tw-flex-col tw-justify-end
+            tw-flex tw-flex-col tw-justify-center
             md:tw-justify-center
             tw-gap-4
           "

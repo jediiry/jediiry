@@ -7,12 +7,12 @@
       data-aos-duration="200"
       class="
         stable-alignment
-        tw-h-full tw-pt-36 tw-pb-16
-        md:tw-py-48
+        tw-h-full
+        md:tw-py-24
         tw-flex tw-flex-col tw-justify-center tw-items-center tw-space-y-24
       "
     >
-      <div class="tw-grid md:tw-grid-cols-5 tw-h-full">
+      <div class="tw-grid md:tw-grid-cols-5 tw-h-full tw-items-center tw-mt-36">
         <div
           class="
             tw-flex tw-flex-col tw-justify-evenly tw-col-span-3 tw-col-start-2
@@ -21,7 +21,7 @@
           <div class="tw-space-y-4 md:tw-space-y-10">
             <typewriter
               :replace="replace"
-              :type-interval="200"
+              :type-interval="10"
               :replace-interval="100"
             >
               <p class="main-font tw-text-5xl md:tw-text-8xl tw-text-primary">
@@ -30,16 +30,17 @@
             </typewriter>
 
             <p class="tw-text-white">
-              I am a software developer with over 5 years of experience, I have a
-              strong background in several programming languages and
-              technologies, including but not limited to Python, Node.js, Golang and Javascript. I have a passion for problem-solving and
-              creating innovative solutions, and I am always eager to learn new
+              I am a software developer with over 5 years of experience, I have
+              a strong background in several programming languages and
+              technologies, including but not limited to Python, Node.js, Golang
+              and Javascript. I have a passion for problem-solving and creating
+              innovative solutions, and I am always eager to learn new
               technologies and programming languages. Throughout my career, I
               have had the opportunity to work on a wide range of projects, from
               developing mobile apps to building complex systems for large
-              organizations. 
+              organizations.
             </p>
-            <div
+            <div @click.prevent="downloadFile"
               class="
                 tw-flex tw-items-center tw-gap-4 tw-cursor-pointer tw-group
               "
@@ -66,13 +67,22 @@
 
 <script lang="ts">
 import Vue from "vue";
-
 export default Vue.extend({
   name: "IndexPage",
   data() {
     return {
       replace: [{ from: "A Software Engineer", to: "A Product Designer" }],
     };
+  },
+  methods: {
+    downloadFile() {
+      const link = document.createElement("a");
+      link.href = "/obadoni.pdf";
+      link.setAttribute("download", "Obadoni.pdf");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    },
   },
 });
 </script>
