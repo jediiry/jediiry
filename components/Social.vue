@@ -1,15 +1,16 @@
 <template>
     <div>
          <div class="tw-flex md:tw-gap-2">
-            <i
+          <a href="https://github.com/jediiry" target="_blank" rel="noopener noreferrer"> <i 
               class="
                 bx
                 bxl-github
-                tw-text-7xl
+                tw-text-5xl
                 hover:tw-text-primary
                 tw-text-white tw-cursor-pointer
               "
-            ></i>
+            ></i></a>
+           
             <!-- <i
               class="
                 bx
