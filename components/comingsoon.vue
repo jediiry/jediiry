@@ -42,9 +42,10 @@
 </template>
 
 <script >
-import defaultSavings from "~/assets/images/prince.webp";
-import defaultPanza from "~/assets/images/ruth.webp";
-import defaultMother from "~/assets/images/slc-Data.webp";
+import defaultSavings from "~/assets/images/bursary.png";
+import defaultPanza from "~/assets/images/sproutly.png";
+import defaultMother from "~/assets/images/shikaan.png";
+import chop from "~/assets/images/hupchop.png";
 export default {
   name: "StatsCard",
   props: {
@@ -53,35 +54,30 @@ export default {
       default: () => {
         return [
           {
-            badge: "Summer 2022",
-            content: "Prince teaches branding",
+            badge: "2022",
+            content: "Bursary",
             image: defaultSavings,
-            tag:'Branding 101'
+            tag:''
           },
           {
-            badge: "Summer 2022",
-            content: "Ruth teaches fashion content creation",
+            badge: "2022",
+            content: "SproutlyHQ",
             image: defaultPanza,
-            tag:'Fashion 101'
+            tag:''
           },
           {
-             badge: "Summer 2022",
-            content: "Bobby Curl Speaks on Security",
+             badge: "2023",
+            content: "TheShikaan",
             image: defaultMother,
-            tag:'Data'
+            tag:''
           },
           {
-             badge: "Summer 2022",
-            content: "Emily & Rose Anderson",
-            image: defaultSavings,
-             tag:'Lifestyle'
+             badge: "2022",
+            content: "HupChop",
+            image: chop,
+             tag:''
           },
-          {
-             badge: "Summer 2022",
-            content: "SLC Team-up Meets",
-            image: defaultPanza,
-            tag:'Finance'
-          },
+        
         ];
       },
     },

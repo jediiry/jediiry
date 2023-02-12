@@ -8,7 +8,7 @@
       class="
         stable-alignment
         tw-h-full
-        md:tw-py-24
+        md:tw-py-10
         tw-flex tw-flex-col tw-justify-center tw-items-center tw-space-y-24
       "
     >
@@ -24,13 +24,13 @@
               :type-interval="10"
               :replace-interval="100"
             >
-              <p class="main-font tw-text-5xl md:tw-text-8xl tw-text-primary">
+              <p class="main-font tw-text-5xl tw-text-center md:tw-text-8xl tw-text-primary">
                 About me
               </p>
             </typewriter>
 
-            <p class="tw-text-white">
-              I am a software developer with over 5 years of experience, I have
+            <p class="tw-text-white tw-text-center">
+              I am a software developer with over 8 years of experience, I have
               a strong background in several programming languages and
               technologies, including but not limited to Python, Node.js, Golang
               and Javascript. I have a passion for problem-solving and creating
@@ -42,7 +42,7 @@
             </p>
             <div @click.prevent="downloadFile"
               class="
-                tw-flex tw-items-center tw-gap-4 tw-cursor-pointer tw-group
+                tw-flex tw-items-center tw-justify-center tw-gap-4 tw-cursor-pointer tw-group
               "
             >
               <i
@@ -59,7 +59,9 @@
             </div>
           </div>
         </div>
-        <Hire class="tw-hidden md:tw-block" />
+        <div class="tw-fixed tw-bottom-20 tw-right-4">
+          <Hire class="tw-hidden md:tw-block" />
+        </div>
       </div>
     </div>
   </div>

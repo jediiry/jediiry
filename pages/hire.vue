@@ -1,6 +1,6 @@
 <template>
-  <div class="tw-min-h-screen main-bg">
-    <Logo customClass="md:tw-py-7" />
+  <div class="tw-h-screen main-bg">
+    <Logo />
     <div
       class="
         stable-alignment
@@ -30,36 +30,7 @@
           <div class="tw-space-y-10">
             <form>
               <div class="tw-space-y-4">
-                <div class="tw-space-y-2">
-                  <label for="fullname"
-                    >FullName <span class="tw-text-red-500">*</span></label
-                  >
-                  <input
-                    type="text"
-                    class="
-                      tw-block
-                      tw-w-full
-                      tw-py-2
-                      tw-px-4
-                      tw-outline-none
-                      tw-bg-secondary3
-                    "
-                  />
-                </div>
-                <div class="tw-space-y-2">
-                  <label for="fullname">Organization</label>
-                  <input
-                    type="text"
-                    class="
-                      tw-block
-                      tw-w-full
-                      tw-py-2
-                      tw-px-4
-                      tw-outline-none
-                      tw-bg-secondary3
-                    "
-                  />
-                </div>
+              
                 <div class="tw-space-y-2">
                   <label for="fullname"
                     >Email <span class="tw-text-red-500">*</span></label
@@ -71,6 +42,7 @@
                       tw-w-full
                       tw-py-2
                       tw-px-4
+                      tw-rounded-md
                       tw-outline-none
                       tw-bg-secondary3
                     "
@@ -87,6 +59,7 @@
                       tw-w-full
                       tw-py-2
                       tw-px-4
+                      tw-rounded-md
                       tw-outline-none
                       tw-bg-secondary3
                     "
@@ -102,14 +75,15 @@
                       tw-w-full
                       tw-py-2
                       tw-px-4
+                      tw-rounded-md
                       tw-outline-none
                       tw-bg-secondary3
                     "
-                    cols="30"
-                    rows="10"
+                    cols="15"
+                    rows="8"
                   ></textarea>
                 </div>
-                <button class="tw-bg-complimentry tw-px-5 tw-py-3">Send</button>
+                <button class="tw-bg-complimentry tw-rounded-md tw-px-5 tw-py-3">Send</button>
               </div>
             </form>
           </div>

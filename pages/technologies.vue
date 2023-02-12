@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-bg-secondary ">
+  <div class="tw-bg-secondary">
     <div
       data-aos="fade-down"
       data-aos-easing="ease-out-cubic"
@@ -10,7 +10,7 @@
       <div class="tw-grid tw-grid-cols-7 tw-h-screen">
         <div
           class="
-          tw-col-span-7
+            tw-col-span-7
             md:tw-col-span-3
             tw-bg-secondary
             tw-grid
@@ -20,7 +20,14 @@
             tw-z-40
           "
         >
-          <div class="tw-space-y-12 tw-pt-32 tw-pb-5 tw-px-10 md:tw-col-start-2 tw-col-span-5 md:tw-col-span-3">
+          <div
+            class="
+              tw-space-y-12 tw-pt-32 tw-pb-5
+              md:tw-col-start-2
+              tw-col-span-5
+              md:tw-col-span-3
+            "
+          >
             <p class="main-font tw-text-5xl tw-text-primary">
               {{ allTechs[index]["technology"] }}
             </p>
@@ -69,7 +76,15 @@
             </p>
           </div>
         </div>
-        <div class="tw-hidden md:tw-block tw-col-span-7 md:tw-col-span-4 tw-relative">
+        <div
+          class="
+            tw-hidden
+            md:tw-block
+            tw-col-span-7
+            md:tw-col-span-4
+            tw-relative
+          "
+        >
           <alltech></alltech>
         </div>
       </div>
@@ -87,28 +102,15 @@ export default Vue.extend({
       allTechs: [
         {
           technology: "Python",
-          description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Temporibus, a cumque eveniet cupiditate cum voluptatem aspernatur 
-      accusamus explicabo. Nesciunt similique aliquid minus ex, 
-      architecto voluptatem libero incidunt numquam, placeat ut fugit
-      voluptate unde. Illo delectus expedita maiores quidem assumenda 
-      amet voluptate culpa, eveniet sint, et mollitia`,
+          description: `I boasts an impressive 8 years of experience working with Python, utilizing popular frameworks such as FastAPI and Django. With a strong understanding of the language and its capabilities, John has delivered numerous successful projects, showcasing his ability to develop efficient and effective solutions. His expertise in Python and its frameworks has allowed him to create robust, scalable applications that meet the needs of clients and deliver exceptional results.`,
         },
         {
           technology: "Javascript",
-          description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Temporibus, a cumque eveniet cupiditate cum voluptatem aspernatur 
-      accusamus explicabo. Nesciunt similique aliquid minus ex, 
-      architecto voluptatem libero incidunt numquam, `,
+          description: `I have eight years of experience working with JavaScript and have extensive experience with various frameworks such as Fastify, Express, Next.js, Vue.js, React.js, Three.js, Nuxt.js. I have used these frameworks to build a wide range of web applications, from simple single-page applications to complex, multi-tiered systems. My experience with these frameworks has given me a deep understanding of the JavaScript ecosystem and the ability to quickly evaluate and adopt new technologies as needed to meet the needs of my clients. Additionally, I am highly proficient in both server-side and client-side development, allowing me to build complete web solutions from start to finish.`,
         },
         {
           technology: "Golang",
-          description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Temporibus, a cumque eveniet cupiditate cum voluptatem aspernatur 
-      accusamus explicabo. Nesciunt similique aliquid minus ex, 
-      architecto voluptatem libero incidunt numquam, placeat ut fugit
-      voluptate unde. Illo delectus expedita maiores quidem assumenda 
-      amet voluptate culpa, eveniet sint`,
+          description: `I have three years of experience working with Go programming language and using various frameworks such as gqlgen. Gqlgen is a GraphQL framework for Go that allows developers to quickly and easily build GraphQL APIs by generating the required boilerplate code. With my experience using gqlgen, I have been able to build highly scalable and efficient GraphQL APIs that meet the needs of my clients. Additionally, I have also developed a deep understanding of Go's standard library and its performance characteristics, allowing me to write optimized and performant code.`,
         },
       ],
     };

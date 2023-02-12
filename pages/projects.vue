@@ -12,26 +12,25 @@
     >
       <div
         class="
-          tw-w-full tw-h-full tw-flex tw-items-center tw-space-y-4 
+          tw-w-full tw-h-full tw-grid
+          md:tw-grid-cols-7
+          tw-items-center tw-space-y-4
         "
       >
-        <div class="md:tw-pt-24">
+        <div class="md:tw-pt-10 tw-col-span-5 tw-col-start-2 tw-text-center">
           <div>
             <typewriter
               :replace="replace"
               :type-interval="200"
               :replace-interval="500"
             >
-              <p class="main-font tw-text-5xl md:tw-text-8xl tw-text-primary">Projects</p>
+              <p class="main-font tw-text-5xl md:tw-text-8xl tw-text-primary">
+                Jobs
+              </p>
             </typewriter>
           </div>
           <p class="tw-text-white tw-pt-6">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
-            totam itaque obcaecati enim numquam aspernatur molestias in fugiat
-            tenetur! Corporis aut id ratione illo expedita dolores ipsam vero.
-            Quae sit similique quaerat architecto aut voluptate ut quia neque.
-            Autem, nihil saepe deleniti dolorem, quos quam, fuga ratione nulla
-            quia dignissimos labore tenetur rerum eius praesentium! Optio?
+            I have completed multiple successful projects, showcasing my expertise in delivering high-quality, innovative and user-friendly websites.
           </p>
           <comingsoon />
         </div>

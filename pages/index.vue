@@ -13,7 +13,7 @@
         tw-flex tw-flex-col tw-justify-center tw-items-center tw-gap-10
       "
     >
-      <div class="tw-mt-36">
+      <div class="tw-mt-10">
         <div
           class="
             tw-flex tw-flex-col tw-justify-center

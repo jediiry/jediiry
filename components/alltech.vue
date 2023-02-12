@@ -148,7 +148,7 @@ export default {
 <style lang="scss" scoped>
 .canvas_for_three {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,6 +1,7 @@
 <template>
   <div>
     <Nuxt />
+     <div class="cursor"></div>
   </div>
 </template>
 <script lang="ts">
@@ -127,5 +128,17 @@ export default Vue.extend({
   opacity: 1;
   visibility: visible;
   transition: all 0.3s 0.2s ease;
+}
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  transition: 0.1s;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 50;
 }
 </style>
