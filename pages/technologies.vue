@@ -10,7 +10,7 @@
       <div class="tw-grid tw-grid-cols-7 tw-h-screen  tw-w-10/12 tw-mx-auto md:tw-mx-0 md:tw-w-full">
         <div
           class=" 
-          tw-mt-10
+          tw-mt-8
           md:tw-mt-0
             tw-col-span-7
             md:tw-col-span-3
