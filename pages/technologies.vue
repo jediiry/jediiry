@@ -10,13 +10,15 @@
       <div class="tw-grid tw-grid-cols-7 tw-h-screen  tw-w-10/12 tw-mx-auto md:tw-mx-0 md:tw-w-full">
         <div
           class=" 
+          tw-mt-20
+          md:tw-mt-0
             tw-col-span-7
             md:tw-col-span-3
             tw-bg-secondary
             tw-grid
             tw-grid-cols-5
             tw-justify-center
-            tw-items-center
+            md:tw-items-center
             tw-z-40
           "
         >
