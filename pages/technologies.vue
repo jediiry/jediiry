@@ -16,7 +16,7 @@
             tw-grid
             tw-grid-cols-5
             tw-justify-center
-            md:tw-items-center
+            tw-items-center
             tw-z-40
           "
         >
@@ -26,6 +26,8 @@
               md:tw-col-start-2
               tw-col-span-5
               md:tw-col-span-3
+               tw-text-center
+               md:tw-text-left
             "
           >
             <p class="main-font tw-text-5xl tw-text-primary">
