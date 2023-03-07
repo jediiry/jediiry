@@ -7,16 +7,16 @@
     >
       <Logo color="tw-text-white" />
 
-      <div class="tw-grid tw-grid-cols-7 tw-h-screen">
+      <div class="tw-grid tw-grid-cols-7 tw-h-screen  tw-w-10/12 tw-mx-auto md:tw-mx-0 md:tw-w-full">
         <div
-          class="
+          class=" 
             tw-col-span-7
             md:tw-col-span-3
             tw-bg-secondary
             tw-grid
             tw-grid-cols-5
             tw-justify-center
-            tw-items-center
+            md:tw-items-center
             tw-z-40
           "
         >
@@ -102,15 +102,15 @@ export default Vue.extend({
       allTechs: [
         {
           technology: "Python",
-          description: `I boasts an impressive 8 years of experience working with Python, utilizing popular frameworks such as FastAPI and Django. With a strong understanding of the language and its capabilities, John has delivered numerous successful projects, showcasing his ability to develop efficient and effective solutions. His expertise in Python and its frameworks has allowed him to create robust, scalable applications that meet the needs of clients and deliver exceptional results.`,
+          description: `I boasts an impressive 5 years of experience working with Python, utilizing popular frameworks such as FastAPI and Django. With a strong understanding of the language and its capabilities, I have delivered numerous successful projects, showcasing my ability to develop efficient and effective solutions. My expertise in Python and its frameworks has allowed me to create robust, scalable applications that meet the needs of clients and deliver exceptional results.`,
         },
         {
           technology: "Javascript",
-          description: `I have eight years of experience working with JavaScript and have extensive experience with various frameworks such as Fastify, Express, Next.js, Vue.js, React.js, Three.js, Nuxt.js. I have used these frameworks to build a wide range of web applications, from simple single-page applications to complex, multi-tiered systems. My experience with these frameworks has given me a deep understanding of the JavaScript ecosystem and the ability to quickly evaluate and adopt new technologies as needed to meet the needs of my clients. Additionally, I am highly proficient in both server-side and client-side development, allowing me to build complete web solutions from start to finish.`,
+          description: `I have 8 years of experience working with JavaScript and have extensive experience with various frameworks such as Fastify, Express, Next.js, Vue.js, React.js, Three.js, Nuxt.js. I have used these frameworks to build a wide range of web applications, from simple single-page applications to complex, multi-tiered systems. My experience with these frameworks has given me a deep understanding of the JavaScript ecosystem and the ability to quickly evaluate and adopt new technologies as needed to meet the needs of my clients. Additionally, I am highly proficient in both server-side and client-side development, allowing me to build complete web solutions from start to finish.`,
         },
         {
           technology: "Golang",
-          description: `I have three years of experience working with Go programming language and using various frameworks such as gqlgen. Gqlgen is a GraphQL framework for Go that allows developers to quickly and easily build GraphQL APIs by generating the required boilerplate code. With my experience using gqlgen, I have been able to build highly scalable and efficient GraphQL APIs that meet the needs of my clients. Additionally, I have also developed a deep understanding of Go's standard library and its performance characteristics, allowing me to write optimized and performant code.`,
+          description: `I have 3 years of experience working with Go programming language and using various frameworks such as gqlgen. Gqlgen is a GraphQL framework for Go that allows developers to quickly and easily build GraphQL APIs by generating the required boilerplate code. With my experience using gqlgen, I have been able to build highly scalable and efficient GraphQL APIs that meet the needs of my clients. Additionally, I have also developed a deep understanding of Go's standard library and its performance characteristics, allowing me to write optimized and performant code.`,
         },
       ],
     };

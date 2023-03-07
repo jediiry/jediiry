@@ -1,44 +1,46 @@
 <template>
-    <div class="tw-relative">
-      <div class="coming-carousel tw-my-10">
-        <div
-          class="carousel-cell tw-bg-grey tw-rounded-lg"
-          :key="index"
-          v-for="(item, index) in items"
-        >
+  <div class="tw-relative">
+    <div class="coming-carousel tw-my-10">
+      <div
+        class="carousel-cell tw-bg-grey tw-rounded-lg"
+        :key="index"
+        v-for="(item, index) in items"
+      >
+        <a target="_blank" :href="item.url">
           <div class="tw-relative">
             <div
               class="show_bg_2 tw-rounded-2xl"
               :style="{
-              'background-image': `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), ${getUrl(
-                item.image
-              )}`,
-            }"
+                'background-image': `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), ${getUrl(
+                  item.image
+                )}`,
+              }"
             >
-              <button class="tw-main-badge tw-py-1 tw-px-6 tw-bg-white tw-text-black tw-rounded-2xl">
-              {{ item.badge }}
-            </button>
-            <div class="tw-text-2xl tw-text-white tw-main-bottom">
-              <p>{{ item.content }}</p>
-              <p class="tw-text-xs">{{ item.tag }}</p>
+              <button
+                class="tw-main-badge tw-py-1 tw-px-6 tw-bg-white tw-text-black tw-rounded-2xl"
+              >
+                {{ item.badge }}
+              </button>
+              <div class="tw-text-2xl tw-text-white tw-main-bottom">
+                <p>{{ item.content }}</p>
+                <p class="tw-text-xs">{{ item.tag }}</p>
+              </div>
             </div>
-            </div>
-            
           </div>
-        </div>
+        </a>
       </div>
-      <div class="tw-hidden md:tw-block carousel-control">
-        <div class="tw-flex tw-justify-between tw-w-full">
-          <button class="tw-left-control" @click="previousSlide">
-            <span class="material-icons tw-text-black">arrow_back</span>
-          </button>
-          <button class="tw-right-control" @click="nextSlide">
-            <span class="material-icons tw-text-black">arrow_forward</span>
-          </button>
-        </div>
-      </div>
-    
     </div>
+    <div class="tw-hidden md:tw-block carousel-control">
+      <div class="tw-flex tw-justify-between tw-w-full">
+        <button class="tw-left-control" @click="previousSlide">
+          <span class="material-icons tw-text-black">arrow_back</span>
+        </button>
+        <button class="tw-right-control" @click="nextSlide">
+          <span class="material-icons tw-text-black">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script >
@@ -57,27 +59,30 @@ export default {
             badge: "2022",
             content: "Bursary",
             image: defaultSavings,
-            tag:''
+            tag: "",
+            url: "https://bursary.ng/",
           },
           {
             badge: "2022",
             content: "SproutlyHQ",
             image: defaultPanza,
-            tag:''
+            tag: "",
+            url: "https://banking.sproutlyhq.com/",
           },
           {
-             badge: "2023",
+            badge: "2023",
             content: "TheShikaan",
             image: defaultMother,
-            tag:''
+            tag: "",
+            url: "https://shikaan.netlify.app/",
           },
           {
-             badge: "2022",
+            badge: "2022",
             content: "HupChop",
             image: chop,
-             tag:''
+            tag: "",
+            url: "https://beta.hupchop.com/",
           },
-        
         ];
       },
     },
@@ -87,14 +92,14 @@ export default {
       flickity: null,
     };
   },
-    methods: {
+  methods: {
     getUrl(img) {
       return `url(${img})`;
     },
-     nextSlide(){
+    nextSlide() {
       this.flickity.next();
     },
-    previousSlide(){
+    previousSlide() {
       this.flickity.previous();
     },
   },
@@ -126,7 +131,6 @@ export default {
 .carousel-cell {
   min-width: 300px;
   margin-right: 50px;
- 
 }
 .carousel-control {
   position: absolute;
