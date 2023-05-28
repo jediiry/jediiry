@@ -13,20 +13,21 @@
         data-aos-easing="ease-out-cubic"
         data-aos-duration="200"
       >
-        <div class="tw-hidden md:tw-flex tw-justify-end">
-          <typewriter
-            :replace="replace"
-            :type-interval="200"
-            :replace-interval="500"
-          >
-            <p class="main-font tw-text-8xl tw-text-primary rotate">Hire Me</p>
-          </typewriter>
-        </div>
+      
         <div
           class="
             tw-flex tw-flex-col tw-justify-evenly tw-col-span-2 md:tw-col-start-2
           "
         >
+          <div class="tw-hidden md:tw-flex tw-justify-end">
+          <typewriter
+            :replace="replace"
+            :type-interval="200"
+            :replace-interval="500"
+          >
+            <p class="main-font tw-text-8xl tw-text-primary rotat">Contact Me</p>
+          </typewriter>
+        </div>
           <div class="tw-space-y-10">
             <form>
               <div class="tw-space-y-4">
