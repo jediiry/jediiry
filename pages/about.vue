@@ -12,7 +12,7 @@
         tw-flex tw-flex-col tw-justify-center tw-items-center tw-space-y-24
       "
     >
-      <div class="tw-grid md:tw-grid-cols-5 tw-h-full tw-items-center tw-mt-36">
+      <div class="tw-grid md:tw-grid-cols-5 tw-h-full tw-items-center tw-mt-36 md:tw-mt-0">
         <div
           class="
             tw-flex tw-flex-col tw-justify-evenly tw-col-span-3 tw-col-start-2

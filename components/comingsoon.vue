@@ -74,7 +74,7 @@ export default {
             content: "TheShikaan",
             image: defaultMother,
             tag: "",
-            url: "https://shikaan.netlify.app/",
+            url: "https://theshikaans.co.uk/",
           },
           {
             badge: "2022",
