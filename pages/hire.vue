@@ -2,10 +2,7 @@
   <div class="tw-h-screen main-bg">
     <Logo />
     <div
-      class="
-        stable-alignment
-        tw-h-full tw-pt-36 tw-pb-10 md:tw-py-48 tw-flex tw-flex-col tw-justify-between tw-space-y-24
-      "
+      class="stable-alignment tw-h-full tw-pt-36 tw-pb-10 md:tw-py-48 tw-flex tw-flex-col tw-justify-between tw-space-y-24"
     >
       <div
         class="tw-grid md:tw-grid-cols-4 tw-h-full tw-gap-10"
@@ -13,40 +10,41 @@
         data-aos-easing="ease-out-cubic"
         data-aos-duration="200"
       >
-      
         <div
-          class="
-            tw-flex tw-flex-col tw-justify-evenly tw-col-span-2 md:tw-col-start-2
-          "
+          class="tw-flex tw-flex-col tw-justify-evenly tw-col-span-2 md:tw-col-start-2"
         >
           <div class="tw-hidden md:tw-flex tw-justify-end">
-          <typewriter
-            :replace="replace"
-            :type-interval="200"
-            :replace-interval="500"
-          >
-            <p class="main-font tw-text-8xl tw-text-primary rotat">Contact Me</p>
-          </typewriter>
-        </div>
+            <typewriter
+              :replace="replace"
+              :type-interval="200"
+              :replace-interval="500"
+            >
+              <p class="main-font tw-text-8xl tw-text-primary rotat">
+                Contact Me
+              </p>
+            </typewriter>
+          </div>
           <div class="tw-space-y-10">
-            <form>
+            <form @submit.prevent="submitForm">
               <div class="tw-space-y-4">
-              
                 <div class="tw-space-y-2">
                   <label for="fullname"
                     >Email <span class="tw-text-red-500">*</span></label
                   >
                   <input
+                    type="email"
+                    required
+                    class="tw-block tw-w-full tw-py-2 tw-px-4 tw-rounded-md tw-outline-none tw-bg-secondary3"
+                  />
+                </div>
+                <div class="tw-space-y-2">
+                  <label for="fullname"
+                    >Full Name <span class="tw-text-red-500">*</span></label
+                  >
+                  <input
                     type="text"
-                    class="
-                      tw-block
-                      tw-w-full
-                      tw-py-2
-                      tw-px-4
-                      tw-rounded-md
-                      tw-outline-none
-                      tw-bg-secondary3
-                    "
+                    required
+                    class="tw-block tw-w-full tw-py-2 tw-px-4 tw-rounded-md tw-outline-none tw-bg-secondary3"
                   />
                 </div>
                 <div class="tw-space-y-2">
@@ -54,16 +52,9 @@
                     >Phone <span class="tw-text-red-500">*</span></label
                   >
                   <input
-                    type="text"
-                    class="
-                      tw-block
-                      tw-w-full
-                      tw-py-2
-                      tw-px-4
-                      tw-rounded-md
-                      tw-outline-none
-                      tw-bg-secondary3
-                    "
+                    type="tel"
+                    required
+                    class="tw-block tw-w-full tw-py-2 tw-px-4 tw-rounded-md tw-outline-none tw-bg-secondary3"
                   />
                 </div>
                 <div class="tw-space-y-2">
@@ -71,20 +62,17 @@
                     >Details <span class="tw-text-red-500">*</span></label
                   >
                   <textarea
-                    class="
-                      tw-block
-                      tw-w-full
-                      tw-py-2
-                      tw-px-4
-                      tw-rounded-md
-                      tw-outline-none
-                      tw-bg-secondary3
-                    "
+                    required
+                    class="tw-block tw-w-full tw-py-2 tw-px-4 tw-rounded-md tw-outline-none tw-bg-secondary3"
                     cols="15"
                     rows="8"
                   ></textarea>
                 </div>
-                <button class="tw-bg-complimentry tw-rounded-md tw-px-5 tw-py-3">Send</button>
+                <button
+                  class="tw-bg-complimentry tw-rounded-md tw-px-5 tw-py-3"
+                >
+                  Send
+                </button>
               </div>
             </form>
           </div>
@@ -105,13 +93,22 @@ export default Vue.extend({
     };
   },
   mixins: [aosMixin],
+  methods: {
+    async submitForm() {
+      try {
+        console.log("henry");
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
 });
 </script>
 <style lang="scss" scoped>
 .main-bg {
   background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(45deg,theme("colors.secondary2"), #1d1d1d);
+  background: linear-gradient(45deg, theme("colors.secondary2"), #1d1d1d);
   background-blend-mode: difference;
 }
 .text-intro {

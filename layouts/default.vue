@@ -1,7 +1,7 @@
 <template>
   <div>
     <Nuxt />
-     <div class="cursor"></div>
+    <div class="cursor"></div>
   </div>
 </template>
 <script lang="ts">
@@ -12,9 +12,9 @@ export default Vue.extend({
 });
 </script>
 <style >
-    body{
-        font-family: 'Montserrat' !important;
-    }
+body {
+  font-family: "Montserrat" !important;
+}
 .main-font {
   font-family: Quadaptor;
 }
@@ -39,7 +39,6 @@ export default Vue.extend({
     @apply tw-w-10/12 tw-m-auto;
   }
 }
-
 
 .gallery {
   width: 100%;
@@ -74,7 +73,7 @@ export default Vue.extend({
 .gallery .image-box:hover img {
   transform: scale(1.1);
 }
-.gallery .image-box .overlay{
+.gallery .image-box .overlay {
   position: absolute;
   top: 0;
   right: 0;
@@ -88,42 +87,42 @@ export default Vue.extend({
   transition: all 0.5s ease;
   z-index: 1;
 }
-.gallery .image-box:hover .overlay{
+.gallery .image-box:hover .overlay {
   opacity: 1;
   top: 20px;
   right: 20px;
   bottom: 20px;
   left: 20px;
 }
-.gallery .image-box .details{
+.gallery .image-box .details {
   text-align: center;
 }
-.gallery .image-box .details .title{
+.gallery .image-box .details .title {
   margin-bottom: 8px;
   font-size: 24px;
   font-weight: 600;
-  position:relative;
+  position: relative;
   top: -5px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
 }
-.gallery .image-box .details .category{
+.gallery .image-box .details .category {
   font-size: 14px;
   font-weight: 400;
-  position:relative;
+  position: relative;
   bottom: -5px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
 }
-.gallery .image-box:hover .details .title{
+.gallery .image-box:hover .details .title {
   top: 0px;
   opacity: 1;
   visibility: visible;
   transition: all 0.3s 0.2s ease;
 }
-.gallery .image-box:hover .details .category{
+.gallery .image-box:hover .details .category {
   bottom: 0px;
   opacity: 1;
   visibility: visible;
@@ -140,5 +139,8 @@ export default Vue.extend({
   pointer-events: none;
   mix-blend-mode: difference;
   z-index: 50;
+}
+input, textarea {
+  color: rgb(148, 138, 138);
 }
 </style>
