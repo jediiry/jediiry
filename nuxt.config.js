@@ -1,6 +1,6 @@
 export default {
   target: "static",
-   ssr: false ,
+  ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "jediiry",
@@ -94,4 +94,8 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   buildDir: "dist",
+  server: {
+    host: "0.0.0.0", // or 'localhost'
+    port: 3000, // or any other port
+  },
 };

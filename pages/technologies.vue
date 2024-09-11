@@ -109,12 +109,16 @@ export default Vue.extend({
           description: `I boasts an impressive 5 years of experience working with Python, utilizing popular frameworks such as FastAPI and Django. With a strong understanding of the language and its capabilities, I have delivered numerous successful projects, showcasing my ability to develop efficient and effective solutions. My expertise in Python and its frameworks has allowed me to create robust, scalable applications that meet the needs of clients and deliver exceptional results.`,
         },
         {
-          technology: "Javascript",
-          description: `I have 8 years of experience working with JavaScript and have extensive experience with various frameworks such as Fastify, Express, Next.js, Vue.js, React.js, Three.js, Nuxt.js. I have used these frameworks to build a wide range of web applications, from simple single-page applications to complex, multi-tiered systems. My experience with these frameworks has given me a deep understanding of the JavaScript ecosystem and the ability to quickly evaluate and adopt new technologies as needed to meet the needs of my clients. Additionally, I am highly proficient in both server-side and client-side development, allowing me to build complete web solutions from start to finish.`,
+          technology: "Typescript",
+          description: `I have 8 years of experience working with Typescript and have extensive experience with various frameworks such as Fastify, Express, Next.js, Vue.js, React.js, Three.js, Nuxt.js. I have used these frameworks to build a wide range of web applications, from simple single-page applications to complex, multi-tiered systems. My experience with these frameworks has given me a deep understanding of the JavaScript ecosystem and the ability to quickly evaluate and adopt new technologies as needed to meet the needs of my clients. Additionally, I am highly proficient in both server-side and client-side development, allowing me to build complete web solutions from start to finish.`,
         },
         {
           technology: "Golang",
           description: `I have 3 years of experience working with Go programming language and using various frameworks such as gqlgen. Gqlgen is a GraphQL framework for Go that allows developers to quickly and easily build GraphQL APIs by generating the required boilerplate code. With my experience using gqlgen, I have been able to build highly scalable and efficient GraphQL APIs that meet the needs of my clients. Additionally, I have also developed a deep understanding of Go's standard library and its performance characteristics, allowing me to write optimized and performant code.`,
+        },
+        {
+          technology: "Solidity",
+          description: `I have 3 years of experience working with Solidity, the programming language used for developing smart contracts on the Ethereum blockchain. During this time, I have utilized various development tools and frameworks to create robust and secure smart contracts. My experience includes building scalable decentralized applications (dApps) and understanding the Ethereum Virtual Machine (EVM) to optimize contract performance. Additionally, I have developed a deep understanding of Solidity's best practices and performance considerations, allowing me to write efficient and secure smart contract code.`,
         },
       ],
     };
