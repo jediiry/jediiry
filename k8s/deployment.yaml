@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jediiry
+  labels:
+    app: portfolio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portfolio
+  template:
+    metadata:
+      labels:
+        app: portfolio
+    spec:
+      containers:
+      - name: jediiry
+        image: <IMAGE_PLACEHOLDER>
+        ports:
+        - containerPort: 3000  # Replace with the port your container exposes
+        env:
+        - name: ENVIRONMENT
+          value: production  # Example environment variable
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "500m"
+          limits:
+            memory: "256Mi"
+            cpu: "1"
+

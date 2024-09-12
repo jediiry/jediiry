@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  nuxt-app:
+    build:
+      context: .        # Path to your Dockerfile (where the Dockerfile is located)
+      dockerfile: Dockerfile  # Specify the Dockerfile to use
+    ports:
+      - "3000:3000"      # Map port 3000 on the host to port 3000 in the container
+    environment:
+      NODE_ENV: production   # Set environment variable for production
+    volumes:
+      - .:/app          # Mount the current directory to /app in the container
+    restart: always     # Automatically restart the container if it stops
