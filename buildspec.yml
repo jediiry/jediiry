@@ -21,12 +21,9 @@ phases:
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - export IMAGE_TAG=${BRANCH}-${COMMIT_HASH}
       - export IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-      - echo "Image Tag: $IMAGE_TAG"
-      - echo "Branch: $BRANCH"
-      - echo "Commit Hash: $COMMIT_HASH"
-
-
-
+      - echo $IMAGE_TAG
+      - echo $BRANCH
+      - echo $COMMIT_HASH
     
   build:
     commands:
