@@ -34,10 +34,10 @@ phases:
   post_build:
     commands:
       - echo Build completed
-      - sed -i "s|<IMAGE_PLACEHOLDER>|$IMAGE_URI|g" k8s/deployment.yaml
-      - kubectl apply -f k8s/deployment.yaml
+      - sed -i "s|<IMAGE_PLACEHOLDER>|$IMAGE_URI|g" k8s/deployment.yml
+      - kubectl apply -f k8s/deployment.yml
 
 
 artifacts:
   files:
-    - k8s/deployment.yaml
+    - k8s/deployment.yml
