@@ -11,12 +11,13 @@ phases:
       - export AWS_REGION=$(aws ssm get-parameter --name "JEDIIRY_AWS_REGION" --with-decryption --query "Parameter.Value" --output text)
       - export AWS_ACCOUNT_ID=$(aws ssm get-parameter --name "JEDIIRY_AWS_ACCOUNT_ID" --with-decryption --query "Parameter.Value" --output text)
       - export CLUSTER_NAME=$(aws ssm get-parameter --name "JEDIIRY_CLUSTER_NAME" --with-decryption --query "Parameter.Value" --output text)
+      - echo $CLUSTER_NAME
 
   pre_build:
     commands:
       - echo Logging in to Amazon ECR....
       - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
-      - aws eks --region $AWS_REGION update-kubeconfig --name $ CLUSTER_NAME
+      - aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME
       - BRANCH=$(echo $CODEBUILD_WEBHOOK_HEAD_REF | cut -d/ -f3)
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - export IMAGE_TAG=${BRANCH}-${COMMIT_HASH}
