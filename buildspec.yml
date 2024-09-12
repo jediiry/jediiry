@@ -3,8 +3,8 @@ version: 0.2
 phases:
   install:
     commands:
-      - apt-get update
-      - apt-get install -y kubectl
+      - docker pull bitnami/kubectl:latest
+      - alias kubectl='docker run --rm -v ~/.kube:/root/.kube bitnami/kubectl'
       - kubectl version --client
       - pip install awscli
       - export IMAGE_REPO_NAME=$(aws ssm get-parameter --name "JEDIIRY_IMAGE_REPO_NAME" --with-decryption --query "Parameter.Value" --output text)
