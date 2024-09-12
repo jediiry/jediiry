@@ -3,10 +3,10 @@ version: 0.2
 phases:
   install:
     commands:
-      - sudo apt-get update
-      - sudo apt-get install -y kubectl
+      - apt-get update
+      - apt-get install -y kubectl
       - kubectl version --client
-       - pip install awscli
+      - pip install awscli
       - export IMAGE_REPO_NAME=$(aws ssm get-parameter --name "JEDIIRY_IMAGE_REPO_NAME" --with-decryption --query "Parameter.Value" --output text)
       - export AWS_REGION=$(aws ssm get-parameter --name "JEDIIRY_AWS_REGION" --with-decryption --query "Parameter.Value" --output text)
       - export AWS_ACCOUNT_ID=$(aws ssm get-parameter --name "JEDIIRY_AWS_ACCOUNT_ID" --with-decryption --query "Parameter.Value" --output text)
