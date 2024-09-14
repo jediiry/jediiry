@@ -4,22 +4,28 @@ phases:
   install:
     commands:
       - docker pull bitnami/kubectl:latest
-      # Set up AWS CLI and kubeconfig
+      # Set up directories for kubeconfig and AWS credentials
       - mkdir -p ~/.kube
       - mkdir -p ~/.aws
-      # Configure AWS CLI with the region and output format
+      # Set up AWS CLI configuration
       - echo "[default]" > ~/.aws/config
       - echo "region = $AWS_REGION" >> ~/.aws/config
-      - aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME
-      # Update the alias to include mounts for kubeconfig and AWS credentials
-      - alias kubectl='docker run --rm -v ~/.kube:/root/.kube -v ~/.aws:/root/.aws bitnami/kubectl'
-      - kubectl version --client
-      - pip install awscli
-      # Fetch necessary parameters from AWS SSM
+      # Fetch parameters from AWS SSM and set environment variables
       - export IMAGE_REPO_NAME=$(aws ssm get-parameter --name "JEDIIRY_IMAGE_REPO_NAME" --with-decryption --query "Parameter.Value" --output text)
       - export AWS_REGION=$(aws ssm get-parameter --name "JEDIIRY_AWS_REGION" --with-decryption --query "Parameter.Value" --output text)
       - export AWS_ACCOUNT_ID=$(aws ssm get-parameter --name "JEDIIRY_AWS_ACCOUNT_ID" --with-decryption --query "Parameter.Value" --output text)
       - export CLUSTER_NAME=$(aws ssm get-parameter --name "JEDIIRY_CLUSTER_NAME" --with-decryption --query "Parameter.Value" --output text)
+      # Debug: Print the retrieved environment variables to verify
+      - echo "Cluster Name: $CLUSTER_NAME"
+      - echo "AWS Region: $AWS_REGION"
+      # Ensure that CLUSTER_NAME is set correctly before running the update command
+      - if [ -z "$CLUSTER_NAME" ]; then echo "Error: CLUSTER_NAME is not set"; exit 1; fi
+      # Update kubeconfig to authenticate with the cluster
+      - aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME
+      # Set kubectl alias
+      - alias kubectl='docker run --rm -v ~/.kube:/root/.kube -v ~/.aws:/root/.aws bitnami/kubectl'
+      - kubectl version --client
+      - pip install awscli
 
   pre_build:
     commands:
@@ -40,10 +46,9 @@ phases:
     commands:
       - echo Build completed
       - sed -i "s|<IMAGE_PLACEHOLDER>|$IMAGE_URI|g" k8s/deployment.yml
-      # Verify kubeconfig and context before applying the manifest
+      # Verify context and nodes before applying the manifest
       - kubectl config current-context
       - kubectl get nodes
-      # Apply the deployment manifest
       - kubectl apply -f k8s/deployment.yml
 
 artifacts:
