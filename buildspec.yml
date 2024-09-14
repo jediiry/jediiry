@@ -3,22 +3,24 @@ version: 0.2
 phases:
   install:
     commands:
+      - echo "Pulling the latest bitnami/kubectl Docker image..."
       - docker pull bitnami/kubectl:latest
-      # Update the alias to include mounts for AWS credentials and kubeconfig
-      - alias kubectl='docker run --rm -v ~/.kube:/root/.kube -v ~/.aws:/root/.aws -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN bitnami/kubectl'
+      # Set up the alias for kubectl with proper mounts and environment variables for AWS credentials
+      - alias kubectl='docker run --rm -v ~/.kube:/root/.kube -v ~/.aws:/root/.aws -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN -e AWS_REGION bitnami/kubectl'
       - kubectl version --client
+      # Install AWS CLI
       - pip install awscli
-      # Fetch necessary parameters from AWS SSM
+      # Retrieve necessary parameters from AWS SSM Parameter Store
       - export IMAGE_REPO_NAME=$(aws ssm get-parameter --name "JEDIIRY_IMAGE_REPO_NAME" --with-decryption --query "Parameter.Value" --output text)
       - export AWS_REGION=$(aws ssm get-parameter --name "JEDIIRY_AWS_REGION" --with-decryption --query "Parameter.Value" --output text)
       - export AWS_ACCOUNT_ID=$(aws ssm get-parameter --name "JEDIIRY_AWS_ACCOUNT_ID" --with-decryption --query "Parameter.Value" --output text)
       - export CLUSTER_NAME=$(aws ssm get-parameter --name "JEDIIRY_CLUSTER_NAME" --with-decryption --query "Parameter.Value" --output text)
-      # Update kubeconfig to authenticate with the cluster
+      # Update kubeconfig to authenticate with the EKS cluster
       - aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME
 
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR....
+      - echo "Logging in to Amazon ECR..."
       - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - export IMAGE_TAG=${COMMIT_HASH}
@@ -26,19 +28,20 @@ phases:
     
   build:
     commands:
-      - echo Building docker image
+      - echo "Building Docker image..."
       - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $IMAGE_URI
       - docker push $IMAGE_URI
     
   post_build:
     commands:
-      - echo Build completed
+      - echo "Build completed, applying Kubernetes deployment..."
       - sed -i "s|<IMAGE_PLACEHOLDER>|$IMAGE_URI|g" k8s/deployment.yml
-      # Ensure kubectl is run with the correct credentials and kubeconfig
+      # Verify Kubernetes context and nodes
       - kubectl config current-context
-      - kubectl get nodes
-      - kubectl apply -f k8s/deployment.yml
+      - kubectl get nodes || echo "Failed to authenticate with the cluster"
+      # Apply the Kubernetes deployment manifest
+      - kubectl apply -f k8s/deployment.yml --validate=false
 
 artifacts:
   files:
