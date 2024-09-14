@@ -16,13 +16,9 @@ phases:
     commands:
       - echo Logging in to Amazon ECR....
       - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
-      - aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - export IMAGE_TAG=${COMMIT_HASH}
       - export IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-      - echo $IMAGE_TAG
-      - echo $IMAGE_URI
-      - echo $COMMIT_HASH
     
   build:
     commands:
@@ -35,8 +31,8 @@ phases:
     commands:
       - echo Build completed
       - sed -i "s|<IMAGE_PLACEHOLDER>|$IMAGE_URI|g" k8s/deployment.yml
+      - aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME
       - kubectl apply -f k8s/deployment.yml
-
 
 artifacts:
   files:
