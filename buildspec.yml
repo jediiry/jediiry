@@ -4,19 +4,22 @@ phases:
   install:
     commands:
       - docker pull bitnami/kubectl:latest
-      - alias kubectl='docker run --rm -v ~/.kube:/root/.kube bitnami/kubectl'
+      # Update the alias to include mounts for AWS credentials and kubeconfig
+      - alias kubectl='docker run --rm -v ~/.kube:/root/.kube -v ~/.aws:/root/.aws -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN bitnami/kubectl'
       - kubectl version --client
       - pip install awscli
+      # Fetch necessary parameters from AWS SSM
       - export IMAGE_REPO_NAME=$(aws ssm get-parameter --name "JEDIIRY_IMAGE_REPO_NAME" --with-decryption --query "Parameter.Value" --output text)
       - export AWS_REGION=$(aws ssm get-parameter --name "JEDIIRY_AWS_REGION" --with-decryption --query "Parameter.Value" --output text)
       - export AWS_ACCOUNT_ID=$(aws ssm get-parameter --name "JEDIIRY_AWS_ACCOUNT_ID" --with-decryption --query "Parameter.Value" --output text)
       - export CLUSTER_NAME=$(aws ssm get-parameter --name "JEDIIRY_CLUSTER_NAME" --with-decryption --query "Parameter.Value" --output text)
+      # Update kubeconfig to authenticate with the cluster
+      - aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME
 
   pre_build:
     commands:
       - echo Logging in to Amazon ECR....
       - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
-      - aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - export IMAGE_TAG=${COMMIT_HASH}
       - export IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
@@ -32,6 +35,9 @@ phases:
     commands:
       - echo Build completed
       - sed -i "s|<IMAGE_PLACEHOLDER>|$IMAGE_URI|g" k8s/deployment.yml
+      # Ensure kubectl is run with the correct credentials and kubeconfig
+      - kubectl config current-context
+      - kubectl get nodes
       - kubectl apply -f k8s/deployment.yml
 
 artifacts:
