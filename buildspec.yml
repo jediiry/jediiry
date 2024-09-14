@@ -3,41 +3,20 @@ version: 0.2
 phases:
   install:
     commands:
-      # Install kubectl
-      - echo "Installing kubectl..."
-      - curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-      - chmod +x kubectl
-      - mv kubectl /usr/local/bin/
-      # Verify kubectl installation
+      - docker pull bitnami/kubectl:latest
+      - alias kubectl='docker run --rm -v ~/.kube:/root/.kube bitnami/kubectl'
       - kubectl version --client
-      # Set up directories for kubeconfig and AWS credentials
-      - mkdir -p ~/.kube
-      - mkdir -p ~/.aws
-      # Set up AWS CLI configuration
       - pip install awscli
-      - echo "[default]" > ~/.aws/config
-      - echo "region = $AWS_REGION" >> ~/.aws/config
-      # Fetch parameters from AWS SSM and set environment variables
       - export IMAGE_REPO_NAME=$(aws ssm get-parameter --name "JEDIIRY_IMAGE_REPO_NAME" --with-decryption --query "Parameter.Value" --output text)
       - export AWS_REGION=$(aws ssm get-parameter --name "JEDIIRY_AWS_REGION" --with-decryption --query "Parameter.Value" --output text)
       - export AWS_ACCOUNT_ID=$(aws ssm get-parameter --name "JEDIIRY_AWS_ACCOUNT_ID" --with-decryption --query "Parameter.Value" --output text)
       - export CLUSTER_NAME=$(aws ssm get-parameter --name "JEDIIRY_CLUSTER_NAME" --with-decryption --query "Parameter.Value" --output text)
-      # Debug: Print the retrieved environment variables to verify
-      - echo "Cluster Name: $CLUSTER_NAME"
-      - echo "AWS Region: $AWS_REGION"
-      # Ensure that CLUSTER_NAME is set correctly before running the update command
-      - if [ -z "$CLUSTER_NAME" ]; then echo "Error: CLUSTER_NAME is not set"; exit 1; fi
-      # Update kubeconfig to authenticate with the cluster
-      - aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME
-      # Debug: Verify kubeconfig and context
-      - cat ~/.kube/config
-      - kubectl config current-context
-      - kubectl get nodes || echo "Failed to connect to cluster"
 
   pre_build:
     commands:
       - echo Logging in to Amazon ECR....
       - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+      - aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - export IMAGE_TAG=${COMMIT_HASH}
       - export IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
@@ -53,11 +32,7 @@ phases:
     commands:
       - echo Build completed
       - sed -i "s|<IMAGE_PLACEHOLDER>|$IMAGE_URI|g" k8s/deployment.yml
-      # Verify context and nodes before applying the manifest
-      - kubectl config current-context
-      - kubectl get nodes
-      # Apply the deployment manifest with validation turned off to bypass openapi download issues
-      - kubectl apply -f k8s/deployment.yml --validate=false
+      - kubectl apply -f k8s/deployment.yml
 
 artifacts:
   files:
