@@ -4,19 +4,16 @@ phases:
   install:
     commands:
       - docker pull bitnami/kubectl:latest
-      # Update the alias to include AWS credentials and kubeconfig
-      - alias kubectl='docker run --rm -v ~/.kube:/root/.kube -v ~/.aws:/root/.aws -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_REGION bitnami/kubectl'
+      # Use the alias without explicitly passing environment variables if using IAM roles
+      - alias kubectl='docker run --rm -v ~/.kube:/root/.kube -v ~/.aws:/root/.aws bitnami/kubectl'
       - kubectl version --client
       - pip install awscli
-      # Fetch necessary parameters from AWS SSM
+      # Fetch parameters from AWS SSM Parameter Store
       - export IMAGE_REPO_NAME=$(aws ssm get-parameter --name "JEDIIRY_IMAGE_REPO_NAME" --with-decryption --query "Parameter.Value" --output text)
       - export AWS_REGION=$(aws ssm get-parameter --name "JEDIIRY_AWS_REGION" --with-decryption --query "Parameter.Value" --output text)
       - export AWS_ACCOUNT_ID=$(aws ssm get-parameter --name "JEDIIRY_AWS_ACCOUNT_ID" --with-decryption --query "Parameter.Value" --output text)
       - export CLUSTER_NAME=$(aws ssm get-parameter --name "JEDIIRY_CLUSTER_NAME" --with-decryption --query "Parameter.Value" --output text)
-      # Configure AWS credentials and EKS kubeconfig
-      - mkdir -p ~/.aws
-      - echo "[default]" > ~/.aws/config
-      - echo "region = $AWS_REGION" >> ~/.aws/config
+      # Update kubeconfig with EKS credentials
       - aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME
 
   pre_build:
@@ -38,7 +35,7 @@ phases:
     commands:
       - echo Build completed
       - sed -i "s|<IMAGE_PLACEHOLDER>|$IMAGE_URI|g" k8s/deployment.yml
-      # Ensure kubectl is run with the correct credentials and kubeconfig
+      # Use kubectl alias to apply the deployment
       - kubectl apply -f k8s/deployment.yml
 
 artifacts:
