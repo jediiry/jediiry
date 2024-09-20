@@ -33,6 +33,7 @@ phases:
       - echo Build completed
       - sed -i "s|<IMAGE_PLACEHOLDER>|$IMAGE_URI|g" k8s/deployment.yml
       - kubectl apply -f k8s/deployment.yml
+      - kubectl apply -f k8s/service.yml
 
 artifacts:
   files:

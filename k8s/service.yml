@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jediiry-service
+  labels:
+    app: portfolio
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80            # External port
+    targetPort: 3000     # Container port to route traffic to
+    protocol: TCP
+  selector:
+    app: portfolio
