@@ -34,6 +34,7 @@ phases:
       - sed -i "s|<IMAGE_PLACEHOLDER>|$IMAGE_URI|g" k8s/deployment.yml
       - kubectl apply -f k8s/deployment.yml
       - kubectl apply -f k8s/service.yml
+      - kubectl get service jediiry-service
 
 artifacts:
   files:

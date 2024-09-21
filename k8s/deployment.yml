@@ -29,4 +29,15 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "1"
-
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000  # This should match the port your container is listening on
+          initialDelaySeconds: 5  # Wait 5 seconds before checking readiness
+          periodSeconds: 10       # Check readiness every 10 seconds
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000  # This should match the port your container is listening on
+          initialDelaySeconds: 15  # Wait 15 seconds before checking liveness
+          periodSeconds: 20        # Check liveness every 20 seconds
