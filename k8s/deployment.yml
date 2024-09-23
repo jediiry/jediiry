@@ -18,10 +18,10 @@ spec:
       - name: jediiry
         image: <IMAGE_PLACEHOLDER>
         ports:
-        - containerPort: 3000  # Replace with the port your container exposes
+        - containerPort: 3000  
         env:
         - name: ENVIRONMENT
-          value: production  # Example environment variable
+          value: <IMAGE_PLACEHOLDER>  
         resources:
           requests:
             memory: "128Mi"
