@@ -1,5 +1,13 @@
 version: 0.2
 
+
+env:
+  parameter-store:
+    IMAGE_REPO_NAME: JEDIIRY_IMAGE_REPO_NAME
+    AWS_ACCOUNT_ID: JEDIIRY_AWS_ACCOUNT_ID
+    AWS_REGION: JEDIIRY_AWS_REGION
+    CLUSTER_NAME: JEDIIRY_CLUSTER_NAME
+
 phases:
   install:
     commands:
@@ -7,10 +15,6 @@ phases:
       - alias kubectl='docker run --rm -v ~/.kube:/root/.kube bitnami/kubectl'
       - kubectl version --client
       - pip install awscli
-      - export IMAGE_REPO_NAME=$(aws ssm get-parameter --name "JEDIIRY_IMAGE_REPO_NAME" --with-decryption --query "Parameter.Value" --output text)
-      - export AWS_REGION=$(aws ssm get-parameter --name "JEDIIRY_AWS_REGION" --with-decryption --query "Parameter.Value" --output text)
-      - export AWS_ACCOUNT_ID=$(aws ssm get-parameter --name "JEDIIRY_AWS_ACCOUNT_ID" --with-decryption --query "Parameter.Value" --output text)
-      - export CLUSTER_NAME=$(aws ssm get-parameter --name "JEDIIRY_CLUSTER_NAME" --with-decryption --query "Parameter.Value" --output text)
 
   pre_build:
     commands:
