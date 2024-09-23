@@ -21,7 +21,7 @@ spec:
         - containerPort: 3000  
         env:
         - name: ENVIRONMENT
-          value: <IMAGE_PLACEHOLDER>  
+          value: <ENVIRONMENT>  
         resources:
           requests:
             memory: "128Mi"
