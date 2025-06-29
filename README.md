@@ -12,7 +12,7 @@ I'm a passionate and detail-oriented software engineer with a knack for building
 - 🛠️ Building optimized, distributed applications at scale
 - 🧰 Languages: JavaScript, Python, Go, TypeScript
 - ☁️ Platforms: AWS (EC2, ECS, Lambda), Docker, Kubernetes
-- 🗃️ Databases: PostgreSQL, DynamoDB, Redis
+- 🗃️ Databases: PostgreSQL, DynamoDB, Redis, Mongodb
 
 
 ---
@@ -22,14 +22,6 @@ I'm a passionate and detail-oriented software engineer with a knack for building
 - 🏗️ Scaling event-driven architectures with AWS Lambda and EventBridge
 - ⚡ Optimizing query performance in PostgreSQL for multi-tenant apps
 - 🧩 Exploring microservices and cloud-native architecture patterns
-
----
-
-## 🌱 I’m Learning
-
-- Rust 🦀
-- AWS CDK
-- Serverless security best practices
 
 ---
 
