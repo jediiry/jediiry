@@ -1,5 +1,63 @@
 # jediiry
 
+# 👋 Hi there, I'm [Your Name]
+
+🚀 **Senior Software Engineer** | Cloud-Native Architect | AWS | Scalable Systems & Optimized Databases
+
+---
+
+## 👨‍💻 About Me
+
+I'm a passionate and detail-oriented software engineer with a knack for building scalable, reliable, and cloud-ready systems. With deep experience in **AWS**, **system architecture**, and **database optimization**, I turn complex problems into elegant solutions.
+
+- 🧠 Currently focused on cloud-native backend systems
+- 🛠️ Building optimized, distributed applications at scale
+- 🧰 Languages: JavaScript, Python, Go, TypeScript
+- ☁️ Platforms: AWS (EC2, ECS, Lambda), Docker, Kubernetes
+- 🗃️ Databases: PostgreSQL, DynamoDB, Redis
+
+---
+
+## 🛠️ Technologies & Tools
+
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+
+---
+
+## ✍️ What I’m Working On
+
+- 🏗️ Scaling event-driven architectures with AWS Lambda and EventBridge
+- ⚡ Optimizing query performance in PostgreSQL for multi-tenant apps
+- 🧩 Exploring microservices and cloud-native architecture patterns
+
+---
+
+## 🌱 I’m Learning
+
+- Rust 🦀
+- AWS CDK
+- Serverless security best practices
+
+---
+
+## 📫 How to Reach Me
+
+- 🌐 [yourwebsite.com](https://yourwebsite.com)
+- 📧 you@example.com
+- 💼 [LinkedIn](https://linkedin.com/in/yourhandle)
+- 🐦 [@yourhandle](https://twitter.com/yourhandle)
+
+---
+
+> *“Fueled by curiosity, guided by architecture, and grounded in clean code.”*
+
+
+
 
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/jediiry) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:jediiry@gmail.com) 
