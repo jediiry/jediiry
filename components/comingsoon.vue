@@ -47,7 +47,7 @@ export default {
         return [
           {
             badge: "2024",
-            content: "Spoint Nigeria",
+            content: "Spiont",
             body: "Money across borders",
             image: defaultSavings,
             url: "https://spiont.com/en",
