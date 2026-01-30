@@ -50,7 +50,7 @@ export default {
             content: "Spoint Nigeria",
             body: "Money across borders",
             image: defaultSavings,
-            url: "https://spoint-website-production.up.railway.app/en",
+            url: "https://spiont.com/en",
           },
           {
             badge: "2022",
