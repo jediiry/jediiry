@@ -19,9 +19,9 @@
 
         <!-- Body Text -->
         <p class="tw-text-white tw-text-sm sm:tw-text-base md:tw-text-lg tw-leading-relaxed tw-text-center tw-space-y-4">
-          I am the founder of Spiont, a fintech company focused on building secure, scalable, and user‑centric financial solutions for emerging markets. The Spoint product is currently under active development and will leverage blockchain technology at its core to ensure transparency, security, and trust across financial interactions.
+          I am the founder of Spooint, a fintech company focused on building secure, scalable, and user‑centric financial solutions for emerging markets. The Spooint product is currently under active development and will leverage blockchain technology at its core to ensure transparency, security, and trust across financial interactions.
           <br /><br />
-          In addition to leading product direction and engineering strategy at Spoint, I also serve as a Developer Advocate for Polygon, where I support developers, promote blockchain adoption, and contribute to the growth of the Web3 ecosystem.
+          In addition to leading product direction and engineering strategy at Spooint, I also serve as a Developer Advocate for Polygon, where I support developers, promote blockchain adoption, and contribute to the growth of the Web3 ecosystem.
           <br /><br />
           Alongside these leadership roles, I bring over eight years of experience as a software and platform engineer, delivering high‑impact solutions across multiple industries. My expertise spans platform engineering, cloud‑native development, blockchain technologies, and AI engineering—enabling me to architect and build resilient systems, intelligent applications, and modern distributed platforms.
           <br /><br />
