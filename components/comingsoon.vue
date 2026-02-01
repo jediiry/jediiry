@@ -47,7 +47,7 @@ export default {
         return [
           {
             badge: "2024",
-            content: "Spiont",
+            content: "Spooint",
             body: "Money across borders",
             image: defaultSavings,
             url: "https://spooint.com/en",
