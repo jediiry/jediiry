@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import defaultSavings from "~/assets/images/spoint.png";
+import defaultSavings from "~/assets/images/spooint.jpeg";
 import defaultPanza from "~/assets/images/sproutly.png";
 import defaultMother from "~/assets/images/shikaan.png";
 import chop from "~/assets/images/hupchop.png";
@@ -50,7 +50,7 @@ export default {
             content: "Spiont",
             body: "Money across borders",
             image: defaultSavings,
-            url: "https://spiont.com/en",
+            url: "https://spooint.com/en",
           },
           {
             badge: "2022",
