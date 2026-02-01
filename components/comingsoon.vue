@@ -46,7 +46,7 @@ export default {
       default: () => {
         return [
           {
-            badge: "2024",
+            badge: "2025",
             content: "Spooint",
             body: "Money across borders",
             image: defaultSavings,
